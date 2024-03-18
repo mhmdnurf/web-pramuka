@@ -1,20 +1,26 @@
 export default function Cover() {
   return (
     <>
-      <div className="bg-white h-[500px] flex pl-10 pt-20 pr-10">
+      <div
+        className="bg-white h-[500px] flex pl-10 pt-20 pr-10"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./cover.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="w-2/3 mr-12">
-          <h1 className="font-semibold text-4xl">
+          <h1 className="font-semibold text-4xl text-white">
             Pramuka {""}
-            <span className="underline text-blue-500">
-              SMA Negeri 1 Toapaya
-            </span>
+            <span className="text-white">SMA Negeri 1 Toapaya</span>
           </h1>
-          <h3 className="font-nunito font-medium my-6">
+          <h3 className="font-nunito font-medium my-6 text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
             cupiditate repellendus sapiente molestiae debitis repellat inventore
             impedit repudiandae neque optio.
           </h3>
-          <h3 className="font-nunito font-semibold text-lg">
+          <h3 className="font-nunito font-semibold text-lg text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sint
             voluptas qui necessitatibus molestiae, distinctio deserunt iste
             temporibus illo enim dolorum voluptatum aut, cumque facere! Dolor
