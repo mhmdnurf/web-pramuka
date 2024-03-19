@@ -5,6 +5,8 @@ import Sejarah from "./components/Sejarah";
 import Statistic from "./components/Statistic";
 import StrukturOrganisasi from "./components/StrukturOrganisasi";
 import VisiMisi from "./components/VisiMisi";
+import "swiper/css";
+import "swiper/css/navigation";
 
 export default function App() {
   return (
