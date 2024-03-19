@@ -1,10 +1,12 @@
 import React from "react";
 
-export default function VisiMisi() {
+export default function VisiMisi(): React.JSX.Element {
   return (
     <>
       <div className="mx-20 mb-20">
-        <p className="font-extrabold text-6xl uppercase my-20">Visi & Misi</p>
+        <p className="font-extrabold text-6xl uppercase my-20 font-nunito text-zinc-800">
+          Visi & Misi
+        </p>
         <div className="flex justify-center shadow">
           <div className="w-1/2 bg-fuchsia-100 p-8">
             <p className="text-2xl font-bold mb-4">Visi</p>

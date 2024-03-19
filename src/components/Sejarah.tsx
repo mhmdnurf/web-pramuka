@@ -4,7 +4,7 @@ export default function Sejarah() {
   return (
     <>
       <div className="bg-amber-900 bg-opacity-70">
-        <p className="text-center text-6xl text-white font-extrabold pt-20">
+        <p className="text-center text-6xl text-white font-extrabold pt-20 font-nunito">
           SEJARAH
         </p>
         <div className="flex mt-24 mx-20 pb-20">
