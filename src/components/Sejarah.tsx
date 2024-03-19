@@ -3,14 +3,21 @@ import React from "react";
 export default function Sejarah() {
   return (
     <>
-      <div className="my-24">
-        <p className="text-center text-3xl font-bold underline">SEJARAH</p>
-        <div className="flex mt-24 mx-20">
-          <div className="bg-slate-50 p-12 rounded-3xl border-8 border-sky-500">
-            <img src="./person.png" alt="" width={450} />
+      <div className="bg-amber-900 bg-opacity-70">
+        <p className="text-center text-6xl text-white font-extrabold pt-20">
+          SEJARAH
+        </p>
+        <div className="flex mt-24 mx-20 pb-20">
+          <div className="shadow rounded-3xl border-4 border-white">
+            <img
+              src="./sejarah.jpg"
+              alt=""
+              width={800}
+              className="w-[800px] rounded-3xl"
+            />
           </div>
           <div className="w-1/2 ml-20">
-            <p className="text-slate-600 font-medium text-justify">
+            <p className="text-white font-semibold text-justify font-nunito">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
               blanditiis sapiente libero illo voluptatibus incidunt eveniet
               quaerat rem aperiam dignissimos alias necessitatibus, magnam,
