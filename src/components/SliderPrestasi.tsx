@@ -16,13 +16,13 @@ interface Data {
   image: string;
 }
 
-interface Slider {
+interface SliderPrestasi {
   data: Data[];
 }
 
-export default function Slider({ data }: Slider) {
+export default function SliderPrestasi({ data }: SliderPrestasi) {
   return (
-    <div className="mx-20 my-8">
+    <div className="mx-20 mt-8 pb-16">
       <Swiper
         spaceBetween={30}
         slidesPerView={3}

@@ -1,5 +1,5 @@
 import React from "react";
-import Slider from "./Slider";
+import SliderPrestasi from "./SliderPrestasi";
 
 export default function DaftarPrestasi(): React.JSX.Element {
   const data = [
@@ -46,11 +46,11 @@ export default function DaftarPrestasi(): React.JSX.Element {
   ];
   return (
     <>
-      <div className="bg-amber-300 bg-opacity-30 border-b-2 pt-10">
+      <div className="bg-amber-300 bg-opacity-30 pt-10">
         <p className="text-6xl font-extrabold uppercase text-zinc-800 font-nunito text-center pt-12 pb-6">
           Daftar Prestasi
         </p>
-        <Slider data={data} />
+        <SliderPrestasi data={data} />
       </div>
     </>
   );
