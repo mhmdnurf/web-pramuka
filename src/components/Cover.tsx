@@ -9,6 +9,7 @@ export default function Cover() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
+        id="home"
       >
         <div className="w-2/3 mr-12">
           <h1 className="font-semibold text-4xl text-white">

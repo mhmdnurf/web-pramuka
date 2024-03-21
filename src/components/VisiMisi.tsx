@@ -3,7 +3,7 @@ import React from "react";
 export default function VisiMisi(): React.JSX.Element {
   return (
     <>
-      <div className="mx-20 mb-20">
+      <div className="mx-20 mb-20" id="visi-misi">
         <p className="font-extrabold text-6xl uppercase my-20 font-nunito text-zinc-800">
           Visi & Misi
         </p>

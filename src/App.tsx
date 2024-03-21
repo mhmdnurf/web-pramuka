@@ -1,5 +1,6 @@
 import Cover from "./components/Cover";
 import DaftarPrestasi from "./components/DaftarPrestasi";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Sejarah from "./components/Sejarah";
 import Statistic from "./components/Statistic";
@@ -17,6 +18,7 @@ export default function App() {
         <VisiMisi />
         <DaftarPrestasi />
         <StrukturOrganisasi />
+        <Footer />
       </div>
     </>
   );

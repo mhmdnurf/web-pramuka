@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Sejarah() {
+export default function Sejarah(): React.JSX.Element {
   return (
     <>
-      <div className="bg-amber-900 bg-opacity-70">
+      <div className="bg-amber-900 bg-opacity-70" id="sejarah">
         <p className="text-center text-6xl text-white font-extrabold pt-20 font-nunito">
           SEJARAH
         </p>

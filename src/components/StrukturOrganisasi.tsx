@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "../organisasi.css";
+import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
 
 export default function StrukturOrganisasi() {
-  const [slide, setSlide] = useState("");
+  const [slide, setSlide] = React.useState("");
   const data = [
     {
       image: "./person.png",
@@ -20,7 +21,7 @@ export default function StrukturOrganisasi() {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = React.useState(0);
 
   const handleNext = () => {
     setSlide("slide-in");
@@ -42,16 +43,16 @@ export default function StrukturOrganisasi() {
 
   return (
     <>
-      <div className="bg-slate-50 py-8 px-20">
+      <div className="bg-white py-8 px-20" id="struktur-organisasi">
         <p className="text-6xl font-extrabold uppercase text-zinc-800 text-left my-20 font-nunito">
           Struktur Organisasi
         </p>
         <div className="flex items-center justify-center">
           <button
             onClick={handlePrev}
-            className="bg-slate-200 rounded-full w-12 h-12 flex items-center justify-center mr-4"
+            className="bg-white border-4 shadow-lg rounded-full w-12 h-12 flex items-center justify-center mr-4"
           >
-            Prev
+            <MdNavigateBefore size={32} className="text-zinc-800" />
           </button>
           <div
             className={`flex flex-col items-center justify-center bg-slate-50 w-[550px] h-80 rounded-xl border-2 border-neutral-200 shadow-md ${slide}`}
@@ -73,9 +74,9 @@ export default function StrukturOrganisasi() {
           </div>
           <button
             onClick={handleNext}
-            className="bg-slate-200 rounded-full w-12 h-12 flex items-center justify-center ml-4"
+            className="bg-white border-4 shadow-lg rounded-full w-12 h-12 flex items-center justify-center ml-4"
           >
-            Next
+            <MdNavigateNext size={32} className="text-zinc-800" />
           </button>
         </div>
       </div>

@@ -46,7 +46,7 @@ export default function DaftarPrestasi(): React.JSX.Element {
   ];
   return (
     <>
-      <div className="bg-amber-300 bg-opacity-30 pt-10">
+      <div className="bg-amber-300 bg-opacity-30 pt-10" id="daftar-prestasi">
         <p className="text-6xl font-extrabold uppercase text-zinc-800 font-nunito text-center pt-12 pb-6">
           Daftar Prestasi
         </p>

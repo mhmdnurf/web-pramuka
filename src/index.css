@@ -10,3 +10,7 @@
 * {
   font-family: "Poppins", sans-serif;
 }
+
+.active-link {
+  @apply border-b-4 border-slate-500;
+}
