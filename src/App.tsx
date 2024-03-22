@@ -1,25 +1,16 @@
-import Cover from "./components/Cover";
-import DaftarPrestasi from "./components/DaftarPrestasi";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Sejarah from "./components/Sejarah";
-import Statistic from "./components/Statistic";
-import StrukturOrganisasi from "./components/StrukturOrganisasi";
-import VisiMisi from "./components/VisiMisi";
+import { Route, BrowserRouter, Routes } from "react-router-dom";
+import routes from "./router";
 
 export default function App() {
   return (
     <>
-      <div className="bg-white">
-        <Header />
-        <Cover />
-        <Statistic />
-        <Sejarah />
-        <VisiMisi />
-        <DaftarPrestasi />
-        <StrukturOrganisasi />
-        <Footer />
-      </div>
+      <BrowserRouter>
+        <Routes>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
