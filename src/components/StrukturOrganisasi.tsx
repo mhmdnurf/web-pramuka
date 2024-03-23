@@ -43,8 +43,17 @@ export default function StrukturOrganisasi() {
 
   return (
     <>
-      <div className="bg-white py-8 px-20" id="struktur-organisasi">
-        <p className="text-6xl font-extrabold uppercase text-zinc-800 text-left my-20 font-nunito">
+      <div
+        className="bg-white py-8 px-20"
+        id="struktur-organisasi"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./sejarah.jpg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <p className="text-6xl font-extrabold uppercase text-white text-left my-20 font-nunito">
           Struktur Organisasi
         </p>
         <div className="flex items-center justify-center">
@@ -55,7 +64,7 @@ export default function StrukturOrganisasi() {
             <MdNavigateBefore size={32} className="text-zinc-800" />
           </button>
           <div
-            className={`flex flex-col items-center justify-center bg-slate-50 w-[550px] h-80 rounded-xl border-2 border-neutral-200 shadow-md ${slide}`}
+            className={`flex flex-col items-center justify-center bg-white bg-opacity-25 w-[550px] h-80 rounded-xl border-2 border-neutral-200 shadow-md ${slide} backdrop-filter backdrop-blur-lg`}
           >
             <div className="bg-red-100 rounded-full w-48 h-48">
               <img
@@ -64,11 +73,13 @@ export default function StrukturOrganisasi() {
                 className="w-48 h-48 rounded-full object-cover"
               />
             </div>
-            <h2 className="text-xl font-bold">{data[currentIndex].name}</h2>
-            <h3 className="text-xs text-slate-400">
+            <h2 className="text-xl font-bold text-white">
+              {data[currentIndex].name}
+            </h2>
+            <h3 className="text-xs text-amber-300">
               {data[currentIndex].position}
             </h3>
-            <p className="text-center text-xs mx-12 mt-2">
+            <p className="text-center text-xs mx-12 mt-2 text-white">
               {data[currentIndex].description}
             </p>
           </div>
