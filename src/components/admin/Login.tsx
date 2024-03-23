@@ -3,10 +3,10 @@ import React from "react";
 export default function Login(): React.JSX.Element {
   return (
     <>
-      <div className="w-screen h-screen bg-gradient-to-tr from-amber-700  flex flex-col justify-center">
+      <div className="w-screen h-screen bg-gradient-to-tl from-slate-700  flex flex-col justify-center">
         <div className="flex justify-center items-center bg-white mx-24 rounded-3xl shadow-xl drop-shadow-sm">
           <div
-            className="flex w-full justify-center items-center h-full rounded-l-3xl bg-gradient-to-tl
+            className="flex w-full justify-center items-center h-full rounded-l-3xl bg-gradient-to-r from-slate-300 to-slate-500
            pt-10"
           >
             <div className="w-[350px]">
@@ -24,13 +24,19 @@ export default function Login(): React.JSX.Element {
               Login Admin
             </h1>
             <p className="font-semibold text-slate-700">Email</p>
-            <input type="text" className="border p-2 rounded-md mb-4" />
+            <input
+              type="text"
+              className="border p-2 rounded-md mb-4 outline-2 focus:outline outline-slate-300 transition-all"
+            />
             <p className="font-semibold text-slate-700">Password</p>
-            <input type="password" className="border p-2 rounded-md" />
-            <p className="text-right mb-4 underline text-xs text-teal-800">
+            <input
+              type="password"
+              className="border p-2 rounded-md outline-2 focus:outline outline-slate-300 transition-all"
+            />
+            <p className="text-right mb-4 underline text-xs text-teal-800 cursor-pointer">
               Forgot password?
             </p>
-            <button className="bg-amber-800 text-white p-2 rounded-md w-full">
+            <button className="bg-slate-800 text-white p-2 rounded-md w-full focus:ring-4 ring-slate-300">
               <p className="font-semibold">Login</p>
             </button>
           </div>
