@@ -22,6 +22,8 @@ export default function Login(): React.JSX.Element {
     auth.onAuthStateChanged((user) => {
       if (user) {
         navigate("/dashboard");
+      } else {
+        setIsLoading(false);
       }
     });
   }, [navigate]);

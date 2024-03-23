@@ -3,6 +3,7 @@ import Dashboard from "./components/admin/Dashboard";
 import Login from "./components/admin/Login";
 import Portofolio from "./Portofolio";
 import ProtectedRoute from "./auth/ProtectedRoute";
+import AddPrestasi from "./components/admin/AddPrestasi";
 
 const App = () => {
   return (
@@ -15,6 +16,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/addPrestasi"
+          element={
+            <ProtectedRoute>
+              <AddPrestasi />
             </ProtectedRoute>
           }
         />
