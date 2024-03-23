@@ -1,16 +1,26 @@
-import { Route, BrowserRouter, Routes } from "react-router-dom";
-import routes from "./router";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./components/admin/Dashboard";
+import Login from "./components/admin/Login";
+import Portofolio from "./Portofolio";
+import ProtectedRoute from "./auth/ProtectedRoute";
 
-export default function App() {
+const App = () => {
   return (
-    <>
-      <BrowserRouter>
-        <Routes>
-          {routes.map((route, index) => (
-            <Route key={index} path={route.path} element={route.element} />
-          ))}
-        </Routes>
-      </BrowserRouter>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Portofolio />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </Router>
   );
-}
+};
+
+export default App;

@@ -1,47 +1,218 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { useNavigate } from "react-router-dom";
+import { Dialog, Transition } from "@headlessui/react";
+import {
+  getAuth,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { app } from "../../utils/firebase";
 
 export default function Login(): React.JSX.Element {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [email, setEmail] = React.useState("");
+  const [forgotEmail, setForgotEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [showPassword, setShowPassword] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(true);
+  const navigate = useNavigate();
+
+  const checkLogin = React.useCallback(() => {
+    const auth = getAuth(app);
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        navigate("/dashboard");
+      }
+    });
+  }, [navigate]);
+
+  React.useEffect(() => {
+    checkLogin();
+  }, [checkLogin]);
+
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const handleForgotPassword = () => {
+    const auth = getAuth(app);
+    sendPasswordResetEmail(auth, forgotEmail)
+      .then(() => {
+        alert("Email reset password telah dikirim");
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(`Error: ${errorCode} - ${errorMessage}`);
+      });
+    closeModal();
+  };
+
+  const handleLogin = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    setIsLoading(true);
+    const auth = getAuth(app);
+    await signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        setIsLoading(false);
+        navigate("/dashboard", { replace: true });
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(`Error: ${errorCode} - ${errorMessage}`);
+        setIsLoading(false);
+      });
+  };
+
   return (
     <>
-      <div className="w-screen h-screen bg-gradient-to-tl from-slate-700  flex flex-col justify-center">
-        <div className="flex justify-center items-center bg-white mx-24 rounded-3xl shadow-xl drop-shadow-sm">
-          <div
-            className="flex w-full justify-center items-center h-full rounded-l-3xl bg-gradient-to-r from-slate-300 to-slate-500
-           pt-10"
-          >
-            <div className="w-[350px]">
-              <img src="./login.svg" alt="login" />
-              <h1 className="text-center mt-10 text-2xl font-semibold text-slate-700">
-                Login Admin - Pramuka SMA Negeri 1 Toapaya
-              </h1>
-              <h3 className="text-center font-light text-zinc-700 mt-4 mb-8">
-                Silahkan login terlebih dahulu sebelum mengakses data admin
-              </h3>
-            </div>
-          </div>
-          <div className="bg-white w-full h-full flex justify-center flex-col mx-32">
-            <h1 className="text-center mb-6 text-2xl font-semibold text-slate-600">
-              Login Admin
-            </h1>
-            <p className="font-semibold text-slate-700">Email</p>
-            <input
-              type="text"
-              className="border p-2 rounded-md mb-4 outline-2 focus:outline outline-slate-300 transition-all"
-            />
-            <p className="font-semibold text-slate-700">Password</p>
-            <input
-              type="password"
-              className="border p-2 rounded-md outline-2 focus:outline outline-slate-300 transition-all"
-            />
-            <p className="text-right mb-4 underline text-xs text-teal-800 cursor-pointer">
-              Forgot password?
-            </p>
-            <button className="bg-slate-800 text-white p-2 rounded-md w-full focus:ring-4 ring-slate-300">
-              <p className="font-semibold">Login</p>
-            </button>
+      {isLoading ? (
+        <div className="fixed inset-0 bg-black/25 flex justify-center items-center">
+          <div className="bg-white p-4 rounded-lg">
+            <p className="text-lg font-semibold text-slate-800">Loading...</p>
           </div>
         </div>
-      </div>
+      ) : (
+        <>
+          <Transition appear show={isOpen} as={Fragment}>
+            <Dialog as="div" className="relative z-10" onClose={closeModal}>
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0"
+                enterTo="opacity-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100"
+                leaveTo="opacity-0"
+              >
+                <div className="fixed inset-0 bg-black/25" />
+              </Transition.Child>
+
+              <div className="fixed inset-0 overflow-y-auto">
+                <div className="flex min-h-full items-center justify-center p-4 text-center">
+                  <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0 scale-95"
+                    enterTo="opacity-100 scale-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100 scale-100"
+                    leaveTo="opacity-0 scale-95"
+                  >
+                    <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                      <Dialog.Title
+                        as="h3"
+                        className="text-lg font-medium leading-6 text-gray-900"
+                      >
+                        Masukkan Email Anda
+                      </Dialog.Title>
+                      <div className="mt-2">
+                        <input
+                          type="text"
+                          className="border-2 p-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-slate-300 transition-all font-medium text-slate-800"
+                          value={forgotEmail}
+                          onChange={(e) => setForgotEmail(e.target.value)}
+                        />
+                      </div>
+
+                      <div className="mt-4 flex-col flex gap-2">
+                        <button
+                          type="button"
+                          className="inline-flex justify-center rounded-md border border-transparent bg-slate-100 px-4 py-2 text-sm font-medium text-slate-900 hover:bg-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-slate-500 focus-visible:ring-offset-2"
+                          onClick={handleForgotPassword}
+                        >
+                          Request New Password
+                        </button>
+                        <button
+                          type="button"
+                          className="inline-flex justify-center rounded-md border border-transparent bg-red-100 px-4 py-2 text-sm font-medium text-red-900 hover:bg-red-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                          onClick={closeModal}
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </Dialog.Panel>
+                  </Transition.Child>
+                </div>
+              </div>
+            </Dialog>
+          </Transition>
+          <div className="w-screen flex justify-center items-center bg-white rounded-3xl shadow-xl drop-shadow-sm">
+            <div
+              className="flex w-full justify-center items-center h-full bg-gradient-to-r from-slate-300 to-slate-500
+           pt-10"
+            >
+              <div className="w-[350px]">
+                <img src="./login.svg" alt="login" />
+                <h1 className="text-center mt-10 text-2xl font-semibold text-slate-700">
+                  Login Admin - Pramuka SMA Negeri 1 Toapaya
+                </h1>
+                <h3 className="text-center font-light text-zinc-700 mt-4 mb-8">
+                  Silahkan login terlebih dahulu sebelum mengakses data admin
+                </h3>
+              </div>
+            </div>
+            <form
+              className="bg-white w-full h-full flex justify-center flex-col mx-32"
+              onSubmit={handleLogin}
+            >
+              <h1 className="text-center mb-6 text-2xl font-semibold text-slate-600">
+                Login Admin
+              </h1>
+              <p className="font-semibold text-slate-700">Email</p>
+              <input
+                type="text"
+                className="border p-2 rounded-md mb-4 outline-2 focus:outline outline-slate-300 transition-all"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <p className="font-semibold text-slate-700">Password</p>
+              <input
+                type={showPassword ? "text" : "password"}
+                className="border p-2 rounded-md outline-2 focus:outline outline-slate-300 transition-all"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <div className="flex justify-between items-center mb-4">
+                <div>
+                  <input
+                    type="checkbox"
+                    name="show-password"
+                    id="show-password"
+                    className="mr-1"
+                    onClick={() => setShowPassword(!showPassword)}
+                  />
+                  <label htmlFor="show-password" className="text-sm font-light">
+                    Show Password
+                  </label>
+                </div>
+                <button
+                  onClick={openModal}
+                  className="text-right underline text-xs text-teal-800 cursor-pointer"
+                  type="button"
+                >
+                  Forgot password?
+                </button>
+              </div>
+              <button
+                className="bg-slate-800 text-white p-2 rounded-md w-full focus:ring-4 ring-slate-300"
+                type="submit"
+              >
+                <p className="font-semibold">
+                  {isLoading ? "Loading..." : "Login"}
+                </p>
+              </button>
+            </form>
+          </div>
+        </>
+      )}
     </>
   );
 }

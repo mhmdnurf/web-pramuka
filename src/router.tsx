@@ -1,3 +1,5 @@
+import ProtectedRoute from "./auth/ProtectedRoute";
+import Dashboard from "./components/admin/Dashboard";
 import Login from "./components/admin/Login";
 import Portofolio from "./Portofolio";
 
@@ -9,6 +11,14 @@ const routes = [
   {
     path: "/",
     element: <Portofolio />,
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
   },
 ];
 
