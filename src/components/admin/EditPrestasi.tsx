@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function AddPrestasi(): React.JSX.Element {
+export default function EditPrestasi(): React.JSX.Element {
   const [imageURL, setImageURL] = React.useState<string | null>(null);
   const [tanggal, setTanggal] = React.useState<string>("");
   const [judul, setJudul] = React.useState<string>("");

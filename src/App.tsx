@@ -4,6 +4,7 @@ import Login from "./components/admin/Login";
 import Portofolio from "./Portofolio";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import AddPrestasi from "./components/admin/AddPrestasi";
+import EditPrestasi from "./components/admin/EditPrestasi";
 
 const App = () => {
   return (
@@ -24,6 +25,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <AddPrestasi />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/editPrestasi/:id"
+          element={
+            <ProtectedRoute>
+              <EditPrestasi />
             </ProtectedRoute>
           }
         />
