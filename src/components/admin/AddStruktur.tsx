@@ -9,11 +9,11 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 
-export default function AddPrestasi(): React.JSX.Element {
+export default function AddStruktur(): React.JSX.Element {
   const navigate = useNavigate();
   const [imageURL, setImageURL] = React.useState<string | null>(null);
-  const [tanggal, setTanggal] = React.useState<string>("");
-  const [judul, setJudul] = React.useState<string>("");
+  const [namaLengkap, setNamaLengkap] = React.useState<string>("");
+  const [jabatan, setJabatan] = React.useState<string>("");
   const [deskripsi, setDeskripsi] = React.useState<string>("");
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
@@ -38,7 +38,7 @@ export default function AddPrestasi(): React.JSX.Element {
       const storage = getStorage(app);
       const storageRef = ref(
         storage,
-        "images/daftar-prestasi/" + fileToUpload.name
+        "images/struktur-organisasi/" + fileToUpload.name
       );
       const uploadTask = uploadBytesResumable(storageRef, fileToUpload);
 
@@ -56,11 +56,11 @@ export default function AddPrestasi(): React.JSX.Element {
 
           try {
             const db = getFirestore(app);
-            await addDoc(collection(db, "prestasi"), {
-              tanggal: tanggal,
-              judul: judul,
+            await addDoc(collection(db, "struktur-organisasi"), {
+              namaLengkap: namaLengkap,
+              jabatan: jabatan,
               deskripsi: deskripsi,
-              imageURL: downloadURL,
+              fotoProfil: downloadURL,
             });
             console.log("Document successfully written!");
             navigate("/dashboard");
@@ -77,7 +77,7 @@ export default function AddPrestasi(): React.JSX.Element {
     <>
       <div className="py-8 bg-slate-700 sticky top-0">
         <h1 className="mx-20 text-2xl text-white font-semibold">
-          Tambah Prestasi
+          Tambah Struktur Organisasi
         </h1>
       </div>
       <div className="mt-10 mx-20">
@@ -94,7 +94,7 @@ export default function AddPrestasi(): React.JSX.Element {
             htmlFor="file-upload"
             className="bg-slate-600 px-4 py-4 w-64 text-center rounded-xl font-semibold text-white cursor-pointer mb-4"
           >
-            Upload Image
+            Upload Foto Profil
           </label>
           <input
             id="file-upload"
@@ -108,46 +108,46 @@ export default function AddPrestasi(): React.JSX.Element {
               <img
                 src={imageURL}
                 alt="Uploaded"
-                className="mt-4 max-w-[600px] max-h-[400px] object-cover border-8 border-zinc-700  rounded-md"
+                className="mt-4 w-64 h-64 object-cover border-8 border-zinc-700  rounded-full"
               />
             </div>
           )}
           <label
-            htmlFor="tanggal"
+            htmlFor="namaLengkap"
             className="text-lg font-semibold text-slate-700"
           >
-            Tanggal Penghargaan
-          </label>
-          <input
-            type="date"
-            className="border p-2 my-2 rounded-md outline-none focus:ring-2 ring-slate-300 transition-all"
-            placeholder="Tanggal Penghargaan"
-            value={tanggal}
-            onChange={(e) => setTanggal(e.target.value)}
-          />
-          <label
-            htmlFor="tanggal"
-            className="text-lg font-semibold text-slate-700"
-          >
-            Judul Prestasti
+            Nama Lengkap
           </label>
           <input
             type="text"
             className="border p-2 my-2 rounded-md outline-none focus:ring-2 ring-slate-300 transition-all"
-            placeholder="Masukkan Judul Prestasi"
-            value={judul}
-            onChange={(e) => setJudul(e.target.value)}
+            placeholder="Masukkan Nama Lengkap"
+            value={namaLengkap}
+            onChange={(e) => setNamaLengkap(e.target.value)}
           />
           <label
-            htmlFor="tanggal"
+            htmlFor="namaLengkap"
             className="text-lg font-semibold text-slate-700"
           >
-            Deskripsi Prestasi
+            Jabatan
           </label>
           <input
             type="text"
             className="border p-2 my-2 rounded-md outline-none focus:ring-2 ring-slate-300 transition-all"
-            placeholder="Masukkan Deskripsi Prestasi"
+            placeholder="Masukkan Jabatan"
+            value={jabatan}
+            onChange={(e) => setJabatan(e.target.value)}
+          />
+          <label
+            htmlFor="namaLengkap"
+            className="text-lg font-semibold text-slate-700"
+          >
+            Deskripsi Jabatan
+          </label>
+          <input
+            type="text"
+            className="border p-2 my-2 rounded-md outline-none focus:ring-2 ring-slate-300 transition-all"
+            placeholder="Masukkan Deskripsi Jabatan"
             value={deskripsi}
             onChange={(e) => setDeskripsi(e.target.value)}
           />
