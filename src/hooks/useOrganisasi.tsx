@@ -7,6 +7,7 @@ interface Organisasi {
   jabatan: string;
   deskripsi: string;
   fotoProfil: string;
+  id: string;
 }
 
 export default function useOrganisasi() {
@@ -21,7 +22,9 @@ export default function useOrganisasi() {
 
       const data: Organisasi[] = [];
       snapshot.forEach((doc) => {
-        data.push(doc.data() as Organisasi);
+        const docData = doc.data() as Organisasi;
+        docData.id = doc.id;
+        data.push(docData);
       });
       setDataOrganisasi(data);
     } catch (error) {
@@ -31,9 +34,15 @@ export default function useOrganisasi() {
     }
   }, []);
 
+  const updateOrganisasi = (id: string) => {
+    setDataOrganisasi((prevData) =>
+      prevData.filter((organisasi) => organisasi.id !== id)
+    );
+  };
+
   React.useEffect(() => {
     fetchDataPrestasi();
   }, [fetchDataPrestasi]);
 
-  return { dataOrganisasi, isLoading };
+  return { dataOrganisasi, isLoading, updateOrganisasi };
 }

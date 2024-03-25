@@ -146,7 +146,7 @@ export default function Login(): React.JSX.Element {
               </div>
             </Dialog>
           </Transition>
-          <div className="w-screen flex justify-center items-center bg-white rounded-3xl shadow-xl drop-shadow-sm">
+          <div className="max-w-screen max-h-screen flex justify-center items-center bg-white rounded-3xl ">
             <div
               className="flex w-full justify-center items-center h-full bg-gradient-to-r from-slate-300 to-slate-500
            pt-10"
@@ -183,7 +183,7 @@ export default function Login(): React.JSX.Element {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <div className="flex justify-between items-center mb-4">
-                <div>
+                <div className="mt-2">
                   <input
                     type="checkbox"
                     name="show-password"

@@ -1,36 +1,38 @@
 import React from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { app } from "../../utils/firebase";
-import { doc, getDoc, getFirestore, updateDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import {
-  getDownloadURL,
   getStorage,
   ref,
   uploadBytesResumable,
+  getDownloadURL,
 } from "firebase/storage";
 
-export default function EditPrestasi(): React.JSX.Element {
+export default function EditStruktur(): React.JSX.Element {
+  const navigate = useNavigate();
   const { id } = useParams<{ id: string }>();
   const [imageURL, setImageURL] = React.useState<string | null>(null);
-  const [tanggal, setTanggal] = React.useState<string>("");
-  const [judul, setJudul] = React.useState<string>("");
+  const [namaLengkap, setNamaLengkap] = React.useState<string>("");
+  const [jabatan, setJabatan] = React.useState<string>("");
   const [deskripsi, setDeskripsi] = React.useState<string>("");
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const navigate = useNavigate();
-
   const fetchData = React.useCallback(async () => {
     try {
       const db = getFirestore(app);
-      const query = doc(db, "prestasi", id || "");
+      if (!id) {
+        throw new Error("ID is undefined or empty");
+      }
+      const query = doc(db, "struktur-organisasi", id);
       const snapshot = await getDoc(query);
 
       if (snapshot.exists()) {
         const data = snapshot.data();
         if (data) {
-          setTanggal(data.tanggal);
-          setJudul(data.judul);
+          setNamaLengkap(data.namaLengkap);
+          setJabatan(data.jabatan);
           setDeskripsi(data.deskripsi);
-          setImageURL(data.imageURL);
+          setImageURL(data.fotoProfil);
         }
       }
     } catch (error) {
@@ -66,12 +68,12 @@ export default function EditPrestasi(): React.JSX.Element {
           throw new Error("ID is undefined or empty");
         }
 
-        const docRef = doc(db, "prestasi", id);
+        const docRef = doc(db, "struktur-organisasi", id);
         await updateDoc(docRef, {
-          tanggal: tanggal,
-          judul: judul,
+          namaLengkap: namaLengkap,
+          jabatan: jabatan,
           deskripsi: deskripsi,
-          imageURL: imageUrl,
+          fotoProfil: imageUrl,
         });
         console.log("Document successfully updated!");
         navigate("/dashboard");
@@ -86,7 +88,7 @@ export default function EditPrestasi(): React.JSX.Element {
       const storage = getStorage(app);
       const storageRef = ref(
         storage,
-        "images/daftar-prestasi/" + fileToUpload.name
+        "images/struktur-organisasi/" + fileToUpload.name
       );
       const uploadTask = uploadBytesResumable(storageRef, fileToUpload);
 
@@ -112,7 +114,7 @@ export default function EditPrestasi(): React.JSX.Element {
     <>
       <div className="py-8 bg-slate-700 sticky top-0">
         <h1 className="mx-20 text-2xl text-white font-semibold">
-          Tambah Prestasi
+          Tambah Struktur Organisasi
         </h1>
       </div>
       <div className="mt-10 mx-20">
@@ -129,7 +131,7 @@ export default function EditPrestasi(): React.JSX.Element {
             htmlFor="file-upload"
             className="bg-slate-600 px-4 py-4 w-64 text-center rounded-xl font-semibold text-white cursor-pointer mb-4"
           >
-            Upload Image
+            Upload Foto Profil
           </label>
           <input
             id="file-upload"
@@ -143,46 +145,46 @@ export default function EditPrestasi(): React.JSX.Element {
               <img
                 src={imageURL}
                 alt="Uploaded"
-                className="mt-4 max-w-[600px] max-h-[400px] object-cover border-8 border-zinc-700  rounded-md"
+                className="mt-4 w-64 h-64 object-cover border-8 border-zinc-700  rounded-full"
               />
             </div>
           )}
           <label
-            htmlFor="tanggal"
+            htmlFor="namaLengkap"
             className="text-lg font-semibold text-slate-700"
           >
-            Tanggal Penghargaan
-          </label>
-          <input
-            type="date"
-            className="border p-2 my-2 rounded-md outline-none focus:ring-2 ring-slate-300 transition-all"
-            placeholder="Tanggal Penghargaan"
-            value={tanggal}
-            onChange={(e) => setTanggal(e.target.value)}
-          />
-          <label
-            htmlFor="tanggal"
-            className="text-lg font-semibold text-slate-700"
-          >
-            Judul Prestasti
+            Nama Lengkap
           </label>
           <input
             type="text"
             className="border p-2 my-2 rounded-md outline-none focus:ring-2 ring-slate-300 transition-all"
-            placeholder="Masukkan Judul Prestasi"
-            value={judul}
-            onChange={(e) => setJudul(e.target.value)}
+            placeholder="Masukkan Nama Lengkap"
+            value={namaLengkap}
+            onChange={(e) => setNamaLengkap(e.target.value)}
           />
           <label
-            htmlFor="tanggal"
+            htmlFor="namaLengkap"
             className="text-lg font-semibold text-slate-700"
           >
-            Deskripsi Prestasi
+            Jabatan
           </label>
           <input
             type="text"
             className="border p-2 my-2 rounded-md outline-none focus:ring-2 ring-slate-300 transition-all"
-            placeholder="Masukkan Deskripsi Prestasi"
+            placeholder="Masukkan Jabatan"
+            value={jabatan}
+            onChange={(e) => setJabatan(e.target.value)}
+          />
+          <label
+            htmlFor="namaLengkap"
+            className="text-lg font-semibold text-slate-700"
+          >
+            Deskripsi Jabatan
+          </label>
+          <input
+            type="text"
+            className="border p-2 my-2 rounded-md outline-none focus:ring-2 ring-slate-300 transition-all"
+            placeholder="Masukkan Deskripsi Jabatan"
             value={deskripsi}
             onChange={(e) => setDeskripsi(e.target.value)}
           />

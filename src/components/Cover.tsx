@@ -36,12 +36,12 @@ export default function Cover() {
             ipsam facilis obcaecati sapiente.
           </h3>
         </div>
-        <div className="bg-yellow-200 w-[400px] h-[400px] rounded-full flex items-center justify-center">
-          {/* <img
-            src="./person.jpg"
-            className="h-[400px] w-[400px] object-fill rounded-full"
+        <div className="bg-gray-100 w-[400px] h-[400px] rounded-full flex items-center justify-center">
+          <img
+            src="./logo.png"
+            className="h-[400px] w-[400px] object-cover rounded-full"
             alt=""
-          /> */}
+          />
         </div>
       </div>
     </>

@@ -9,11 +9,11 @@ import "../styles.css";
 import { Autoplay } from "swiper/modules";
 
 interface Data {
-  id: number;
-  date: string;
-  title: string;
-  description: string;
-  image: string;
+  id: string;
+  tanggal: string;
+  judul: string;
+  deskripsi: string;
+  imageURL: string;
 }
 
 interface SliderPrestasi {
@@ -35,19 +35,24 @@ export default function SliderPrestasi({ data }: SliderPrestasi) {
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="min-w-80 min-h-72 bg-amber-800 bg-opacity-60 rounded-lg shadow-xl">
+            <div className="min-w-80 min-h-52 bg-amber-800 bg-opacity-60 rounded-lg shadow-xl">
               <img
-                src={item.image}
+                src={item.imageURL}
                 alt="prestasi"
                 className="rounded-t-lg object-cover w-full h-52"
               />
-              <div className="p-4">
+              <div className="p-4 h-36">
                 <p className="text-xs text-white font-extralight">
-                  {item.date}
+                  {new Date(item.tanggal).toLocaleDateString("id-ID", {
+                    weekday: "long",
+                    year: "numeric",
+                    month: "long",
+                    day: "numeric",
+                  })}
                 </p>
-                <p className="text-sm font-bold text-white">{item.title}</p>
+                <p className="text-sm font-bold text-white">{item.judul}</p>
                 <p className="text-xs text-white font-extralight">
-                  {item.description}
+                  {item.deskripsi}
                 </p>
               </div>
             </div>

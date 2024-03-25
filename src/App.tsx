@@ -6,6 +6,7 @@ import ProtectedRoute from "./auth/ProtectedRoute";
 import AddPrestasi from "./components/admin/AddPrestasi";
 import EditPrestasi from "./components/admin/EditPrestasi";
 import AddStruktur from "./components/admin/AddStruktur";
+import EditStruktur from "./components/admin/EditStruktur";
 
 const App = () => {
   return (
@@ -42,6 +43,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <AddStruktur />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/editStruktur/:id"
+          element={
+            <ProtectedRoute>
+              <EditStruktur />
             </ProtectedRoute>
           }
         />
