@@ -7,6 +7,7 @@ import AddPrestasi from "./components/admin/AddPrestasi";
 import EditPrestasi from "./components/admin/EditPrestasi";
 import AddStruktur from "./components/admin/AddStruktur";
 import EditStruktur from "./components/admin/EditStruktur";
+import AddAnggota from "./components/admin/AddAnggota";
 
 const App = () => {
   return (
@@ -51,6 +52,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <EditStruktur />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/daftar-anggota"
+          element={
+            <ProtectedRoute>
+              <AddAnggota />
             </ProtectedRoute>
           }
         />

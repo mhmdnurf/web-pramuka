@@ -7,6 +7,7 @@ import { getFirestore, doc, deleteDoc } from "firebase/firestore";
 import Swal from "sweetalert2";
 import TabelPrestasi from "./TabelPrestasi";
 import TabelOrganisasi from "./TabelOrganisasi";
+import DaftarAnggota from "./DaftarAnggota";
 
 export default function Dashboard(): React.JSX.Element {
   const {
@@ -71,6 +72,7 @@ export default function Dashboard(): React.JSX.Element {
       ) : (
         <div className="flex flex-col h-screen">
           <Header />
+          <DaftarAnggota />
           <TabelPrestasi
             dataPrestasi={dataPrestasi}
             handleDeletePrestasi={handleDeletePrestasi}

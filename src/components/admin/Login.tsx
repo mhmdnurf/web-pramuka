@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Dialog, Transition } from "@headlessui/react";
 import {
   getAuth,
@@ -211,6 +211,12 @@ export default function Login(): React.JSX.Element {
                   {isLoading ? "Loading..." : "Login"}
                 </p>
               </button>
+              <Link
+                to={"/"}
+                className="bg-slate-300 text-slate-500 p-2 rounded-md w-full focus:ring-4 ring-slate-300 mt-2"
+              >
+                <p className="font-semibold text-center">Back to Home</p>
+              </Link>
             </form>
           </div>
         </>
