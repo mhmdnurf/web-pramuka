@@ -19,6 +19,25 @@ export default function TabelPrestasi({
   handleDeletePrestasi,
   handleShowImage,
 }: TabelPrestasi): React.JSX.Element {
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const [search, setSearch] = React.useState("");
+  const itemsPerPage = 5;
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = currentPage * itemsPerPage;
+  const filteredData = dataPrestasi.filter((item) =>
+    item.judul.toLowerCase().includes(search.toLowerCase())
+  );
+  const totalPages = Math.ceil(filteredData.length / itemsPerPage);
+  const currentItems = filteredData.slice(startIndex, endIndex);
   return (
     <>
       <div id="daftar-prestasi">
@@ -36,6 +55,8 @@ export default function TabelPrestasi({
             <input
               type="search"
               className="border-2 rounded-md focus:outline-none focus:ring-2 transition-all ring-slate-300 p-2 w-[450px]"
+              placeholder="Cari Judul Prestasi..."
+              onChange={handleSearchChange}
             />
           </div>
           <div className="divide-y divide-gray-200 border-4 rounded-xl overflow-auto shadow-md">
@@ -63,9 +84,9 @@ export default function TabelPrestasi({
                 </tr>
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
-                {dataPrestasi.map((item, index) => (
+                {currentItems.map((item, index) => (
                   <tr key={index}>
-                    <td className="px-6 py-4">{index + 1}</td>
+                    <td className="px-6 py-4">{startIndex + index + 1}</td>
                     <td className="px-6 py-4">
                       <button
                         className="hover:underline hover:text-blue-600 transition-all  transform hover:scale-125"
@@ -98,6 +119,23 @@ export default function TabelPrestasi({
                 ))}
               </tbody>
             </table>
+            <div className="w-full flex p-4 justify-end">
+              {Array.from({ length: totalPages }, (_, i) => i + 1).map(
+                (pageNumber) => (
+                  <button
+                    key={pageNumber}
+                    onClick={() => handlePageChange(pageNumber)}
+                    className={`mx-1 px-4 py-2 border rounded-full ${
+                      currentPage === pageNumber
+                        ? "bg-slate-600 text-white font-semibold"
+                        : ""
+                    }`}
+                  >
+                    {pageNumber}
+                  </button>
+                )
+              )}
+            </div>
           </div>
         </div>
       </div>
