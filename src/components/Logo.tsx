@@ -1,23 +1,23 @@
 import React from "react";
 
-export default function Sejarah(): React.JSX.Element {
+export default function Logo(): React.JSX.Element {
   return (
     <>
-      <div className="bg-amber-900 bg-opacity-70" id="sejarah">
-        <p className="text-center text-6xl text-white font-extrabold pt-20 font-nunito">
-          SEJARAH
+      <div className="bg-amber-900 bg-opacity-70" id="logo">
+        <p className="text-center text-2xl sm:text-4xl md:text-6xl text-white font-extrabold sm:pt-20 pt-10 font-nunito">
+          LOGO
         </p>
-        <div className="flex mt-24 mx-20 pb-20">
-          <div className="shadow rounded-3xl border-4 border-white">
+        <div className="flex flex-col sm:mt-24 mt-6 mx-4 sm:mx-20 pb-20 sm:flex-row">
+          <div className="shadow rounded-3xl border-4 border-white mb-4 sm:mb-0">
             <img
               src="./sejarah.jpg"
               alt=""
               width={800}
-              className="w-[800px] rounded-3xl"
+              className="w-full sm:w-[800px] rounded-3xl"
             />
           </div>
-          <div className="w-1/2 ml-20">
-            <p className="text-white font-semibold text-justify font-nunito">
+          <div className="w-full sm:w-1/2 sm:ml-20">
+            <p className="text-white font-semibold sm:text-base text-xs text-justify font-nunito">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
               blanditiis sapiente libero illo voluptatibus incidunt eveniet
               quaerat rem aperiam dignissimos alias necessitatibus, magnam,

@@ -148,15 +148,20 @@ export default function Login(): React.JSX.Element {
           </Transition>
           <div className="max-w-screen max-h-screen flex justify-center items-center bg-white rounded-3xl ">
             <div
-              className="flex w-full justify-center items-center h-full bg-gradient-to-r from-slate-300 to-slate-500
+              className="flex w-full justify-center items-center h-screen bg-gradient-to-r from-slate-300 to-slate-500
            pt-10"
+              style={{
+                backgroundImage:
+                  "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./login.jpeg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
               <div className="w-[350px]">
-                <img src="./login.svg" alt="login" />
-                <h1 className="text-center mt-10 text-2xl font-semibold text-slate-700">
+                <h1 className="text-center mt-10 text-2xl font-semibold text-white">
                   Login Admin - Pramuka SMA Negeri 1 Toapaya
                 </h1>
-                <h3 className="text-center font-light text-zinc-700 mt-4 mb-8">
+                <h3 className="text-center font-light text-white mt-4 mb-8">
                   Silahkan login terlebih dahulu sebelum mengakses data admin
                 </h3>
               </div>

@@ -2,44 +2,36 @@ export default function Cover() {
   return (
     <>
       <div
-        className="bg-white h-[500px] flex pl-10 pt-20 pr-10"
+        className="sm:w-screen bg-white h-[400px] sm:h-[500px] md:h-[700px] flex flex-col sm:flex-row pl-10 pt-20 pr-10"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./cover.jpg)",
+            "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./cover.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
         id="home"
       >
-        <div className="w-2/3 mr-12">
-          <h1 className="font-semibold text-4xl text-white">
+        <div className="w-full sm:w-2/3 mr-12">
+          <h1 className="font-semibold text-2xl sm:text-4xl text-white">
             Pramuka {""}
             <span className="text-white">SMA Negeri 1 Toapaya</span>
           </h1>
-          <h3 className="font-nunito font-medium my-6 text-white">
+          <h3 className="font-nunito font-medium my-6 text-xs sm:text-lg text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
             cupiditate repellendus sapiente molestiae debitis repellat inventore
             impedit repudiandae neque optio.
           </h3>
-          <h3 className="font-nunito font-semibold text-lg text-white">
+          <h3 className="font-nunito font-semibold text-xs sm:text-lg text-white">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sint
             voluptas qui necessitatibus molestiae, distinctio deserunt iste
             temporibus illo enim dolorum voluptatum aut, cumque facere! Dolor
             quasi aut ipsa nobis odio facere numquam quod pariatur nesciunt qui
-            facilis commodi, libero fugit architecto perspiciatis placeat
-            accusantium sunt quos, animi voluptas reiciendis porro distinctio
-            modi hic. Quos expedita in soluta facere hic recusandae quasi veniam
-            ex quam temporibus dolorum sint, praesentium eius voluptatum
-            accusantium mollitia fuga nisi. Nemo eius porro esse voluptates amet
-            laboriosam nesciunt quia recusandae, ipsam atque suscipit
-            consequuntur nostrum modi possimus. Maxime facere non, voluptatem
-            ipsam facilis obcaecati sapiente.
           </h3>
         </div>
-        <div className="bg-gray-100 w-[400px] h-[400px] rounded-full flex items-center justify-center">
+        <div className="bg-gray-100 w-full sm:w-[400px] h-[200px] sm:h-[400px] rounded-full hidden sm:flex items-center justify-center mt-4 sm:mt-0">
           <img
             src="./logo.png"
-            className="h-[400px] w-[400px] object-cover rounded-full"
+            className="h-[200px] sm:h-[400px] w-[200px] sm:w-[400px] object-cover rounded-full"
             alt=""
           />
         </div>

@@ -22,16 +22,21 @@ interface SliderPrestasi {
 
 export default function SliderPrestasi({ data }: SliderPrestasi) {
   return (
-    <div className="mx-20 mt-8 pb-16">
+    <div className="sm:mx-20 mx-4 sm:mt-8 mt-6 sm:pb-16 pb-8">
       <Swiper
         spaceBetween={30}
-        slidesPerView={3}
+        slidesPerView={1}
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
         modules={[Autoplay]}
         className="mySwiper"
+        breakpoints={{
+          640: {
+            slidesPerView: 3,
+          },
+        }}
       >
         {data.map((item) => (
           <SwiperSlide key={item.id}>

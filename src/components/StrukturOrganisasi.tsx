@@ -29,16 +29,16 @@ export default function StrukturOrganisasi() {
   return (
     <>
       <div
-        className="bg-white py-8 px-20"
+        className="bg-white py-8 sm:px-20 px-5"
         id="struktur-organisasi"
         style={{
           backgroundImage:
-            "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./sejarah.jpg)",
+            "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./struktur.jpeg)",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <p className="text-6xl font-extrabold uppercase text-white text-left my-20 font-nunito">
+        <p className="sm:text-6xl text-2xl font-extrabold uppercase text-white text-left sm:my-20 my-10 font-nunito">
           Struktur Organisasi
         </p>
         {isLoading ? (
@@ -46,22 +46,22 @@ export default function StrukturOrganisasi() {
             Loading...
           </p>
         ) : (
-          <div className="flex items-center justify-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center">
             <button
               onClick={handlePrev}
-              className="bg-white border-4 shadow-lg rounded-full w-12 h-12 flex items-center justify-center mr-4"
+              className="bg-white border-4 shadow-lg rounded-full w-12 h-12 flex items-center justify-center mb-4 sm:mb-0 sm:mr-4"
             >
               <MdNavigateBefore size={32} className="text-zinc-800" />
             </button>
             <div
-              className={`flex flex-col items-center justify-center bg-white bg-opacity-25 w-[550px] h-80 rounded-xl border-2 border-neutral-200 shadow-md ${slide} backdrop-filter backdrop-blur-lg`}
+              className={`flex flex-col items-center justify-center bg-white bg-opacity-25 w-full sm:w-[550px] h-64 sm:h-80 rounded-xl border-2 border-neutral-200 shadow-md ${slide} backdrop-filter backdrop-blur-none sm:backdrop-blur-lg`}
             >
-              <div className="bg-red-100 rounded-full w-48 h-48">
+              <div className="bg-red-100 rounded-full w-32 sm:w-48 h-32 sm:h-48">
                 {data[currentIndex] && (
                   <img
                     src={data[currentIndex].fotoProfil}
                     alt={data[currentIndex].namaLengkap}
-                    className="w-48 h-48 rounded-full object-cover"
+                    className="w-32 h-32 sm:w-48 sm:h-48 rounded-full object-cover"
                   />
                 )}
               </div>
@@ -77,7 +77,7 @@ export default function StrukturOrganisasi() {
             </div>
             <button
               onClick={handleNext}
-              className="bg-white border-4 shadow-lg rounded-full w-12 h-12 flex items-center justify-center ml-4"
+              className="bg-white border-4 shadow-lg rounded-full w-12 h-12 flex items-center justify-center mt-4 sm:mt-0 sm:ml-4"
             >
               <MdNavigateNext size={32} className="text-zinc-800" />
             </button>

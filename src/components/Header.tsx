@@ -3,13 +3,12 @@ import { Link } from "react-scroll";
 
 export default function Header() {
   const [activeLink, setActiveLink] = React.useState("");
-  console.log(activeLink);
   return (
     <>
-      <div className="py-8 bg-white bg-opacity-10 backdrop-blur-md drop-shadow-xl sticky top-0">
+      <div className="sm:py-8 py-6 bg-white bg-opacity-10 backdrop-blur-md drop-shadow-xl sticky top-0">
         <nav className="flex justify-center">
-          <ul className="flex gap-12">
-            <li className="font-semibold text-slate-800  cursor-pointer">
+          <ul className="flex sm:gap-12 gap-4">
+            <li className="font-semibold text-[6pt] sm:text-base text-slate-800  cursor-pointer">
               <Link
                 to="home"
                 smooth
@@ -17,43 +16,47 @@ export default function Header() {
                 spy
                 onSetActive={() => setActiveLink("home")}
                 className={
-                  activeLink === "home" ? "border-b-4 border-slate-500" : ""
+                  activeLink === "home"
+                    ? "sm:border-b-4 border-b-2 border-slate-500"
+                    : ""
                 }
               >
                 Home
               </Link>
             </li>
-            <li className="font-semibold text-slate-800 cursor-pointer">
+            <li className="font-semibold text-[6pt] sm:text-base text-slate-800 cursor-pointer">
               <Link
-                to="sejarah"
+                to="logo"
                 smooth
                 duration={500}
                 spy
-                onSetActive={() => setActiveLink("sejarah")}
+                onSetActive={() => setActiveLink("logo")}
                 className={
-                  activeLink === "sejarah" ? "border-b-4 border-slate-500" : ""
-                }
-              >
-                Sejarah
-              </Link>
-            </li>
-            <li className="font-semibold text-slate-800 cursor-pointer">
-              <Link
-                to="visi-misi"
-                smooth
-                duration={500}
-                spy
-                onSetActive={() => setActiveLink("visi-misi")}
-                className={
-                  activeLink === "visi-misi"
-                    ? "border-b-4 border-slate-500"
+                  activeLink === "logo"
+                    ? "sm:border-b-4 border-b-2 border-slate-500"
                     : ""
                 }
               >
-                Visi & Misi
+                Logo
               </Link>
             </li>
-            <li className="font-semibold text-slate-800 cursor-pointer">
+            <li className="font-semibold text-[6pt] sm:text-base text-slate-800 cursor-pointer">
+              <Link
+                to="sandi-ambalan"
+                smooth
+                duration={500}
+                spy
+                onSetActive={() => setActiveLink("sandi-ambalan")}
+                className={
+                  activeLink === "sandi-ambalan"
+                    ? "sm:border-b-4 border-b-2 border-slate-500"
+                    : ""
+                }
+              >
+                Sandi Ambalan
+              </Link>
+            </li>
+            <li className="font-semibold text-[6pt] sm:text-base text-slate-800 cursor-pointer">
               <Link
                 to="daftar-prestasi"
                 smooth
@@ -62,14 +65,14 @@ export default function Header() {
                 onSetActive={() => setActiveLink("dafar-prestasi")}
                 className={
                   activeLink === "dafar-prestasi"
-                    ? "border-b-4 border-slate-500"
+                    ? "sm:border-b-4 border-b-2 border-slate-500"
                     : ""
                 }
               >
                 Daftar Prestasi
               </Link>
             </li>
-            <li className="font-semibold text-slate-800 cursor-pointer">
+            <li className="font-semibold text-[6pt] sm:text-base text-slate-800 cursor-pointer">
               <Link
                 to="struktur-organisasi"
                 smooth
@@ -78,7 +81,7 @@ export default function Header() {
                 onSetActive={() => setActiveLink("struktur-organisasi")}
                 className={
                   activeLink === "struktur-organisasi"
-                    ? "border-b-4 border-slate-500"
+                    ? "sm:border-b-4 border-b-2 border-slate-500"
                     : ""
                 }
               >
