@@ -4,7 +4,7 @@ import { FaPencil } from "react-icons/fa6";
 import useAnggota from "../../hooks/useAnggota";
 
 export default function DaftarAnggota(): React.JSX.Element {
-  const { jumlahLakiLaki, jumlahPerempuan, isLoading } = useAnggota();
+  const { jumlahLakiLaki, jumlahPerempuan } = useAnggota();
   return (
     <>
       <div className="mx-20 my-10 max-w-[400px] border-4 p-4 rounded-xl flex justify-between">
