@@ -14,13 +14,13 @@ export default function Footer(): React.JSX.Element {
           <nav className="flex justify-center md:justify-start">
             <ul className="flex flex-col md:flex-row gap-4 md:gap-12">
               <li className="font-light text-white cursor-pointer hover:underline">
-                <ScrollLink to="sejarah" smooth duration={500}>
-                  Sejarah
+                <ScrollLink to="logo" smooth duration={500}>
+                  Logo
                 </ScrollLink>
               </li>
               <li className="font-light text-white cursor-pointer hover:underline">
-                <ScrollLink to="visi-misi" smooth duration={500}>
-                  Visi & Misi
+                <ScrollLink to="sandi-ambalan" smooth duration={500}>
+                  Sandi Ambalan
                 </ScrollLink>
               </li>
               <li className="font-light text-white cursor-pointer hover:underline">
