@@ -10,10 +10,9 @@ export default function Logo(): React.JSX.Element {
         <div className="flex flex-col sm:mt-24 mt-6 mx-4 sm:mx-20 pb-20 sm:flex-row">
           <div className="shadow rounded-3xl border-4 border-white mb-4 sm:mb-0">
             <img
-              src="./sejarah.jpg"
+              src="./logo.jpg"
               alt=""
-              width={800}
-              className="w-full sm:w-[800px] rounded-3xl"
+              className="w-full h-90 sm:w-[400px] sm:h-[400px] object-cover sm:object-cover rounded-3xl"
             />
           </div>
           <div className="w-full sm:w-1/2 sm:ml-20">
