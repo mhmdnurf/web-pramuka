@@ -12,10 +12,24 @@ export default function Cover() {
         id="home"
       >
         <div className="w-full sm:w-2/3 mr-12">
-          <h1 className="font-semibold text-2xl sm:text-4xl text-white">
-            SMA Negeri 1 Toapaya
-          </h1>
-          <h3 className="font-nunito font-medium my-6 text-xs sm:text-lg text-white">
+          <div className="flex">
+            <h1 className="font-semibold max-sm:text-lg text-2xl sm:text-4xl text-white">
+              SMA Negeri 1 Toapaya
+            </h1>
+            <div className="flex sm:hidden">
+              <img
+                src="./logo-sekolah.png"
+                alt=""
+                className="w-4 object-contain mx-2"
+              />
+              <img
+                src="./logo-pramuka.png"
+                alt=""
+                className="w-4 object-contain"
+              />
+            </div>
+          </div>
+          <h3 className="font-nunito font-medium my-6 text-xs md:text-lg text-white">
             SMA ini didirikan di era reformasi atas tuntutan masyarakat akan
             lembaga pendidikan di daerah ini, serta pertimbangan upaya tetap
             mempertahankan keberadaan institusi pendidikan yang telah ada yaitu

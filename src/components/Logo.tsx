@@ -6,18 +6,17 @@ export default function Logo(): React.JSX.Element {
         <p className="text-center text-2xl sm:text-4xl md:text-6xl text-white font-extrabold sm:pt-20 pt-10 font-nunito">
           LOGO
         </p>
-        <div className="flex flex-col sm:mt-24 mt-6 mx-4 sm:mx-20 pb-20 sm:flex-row">
-          <div className="rounded-3xl mb-4 sm:mb-0 flex justify-center">
-            <img
-              src="./logo-pramuka.png"
-              alt=""
-              className="w-52 sm:w-[400px] sm:h-[400px] object-cover sm:object-cover rounded-3xl"
-            />
-          </div>
-          <div className="w-full sm:w-fit sm:ml-20 border-4 border-amber-500 rounded-xl p-4 ">
-            <div className="flex flex-row flex-wrap justify-center">
+        <div className="flex flex-col sm:mt-24 mt-6 mx-4 sm:mx-10 pb-20 sm:flex-row flex-wrap sm:justify-evenly justify-center items-center sm:items-start">
+          <img
+            src="./logo-pramuka.png"
+            alt=""
+            className="w-96 sm:w-[400px] h-96 object-cover rounded-3xl mb-6"
+          />
+
+          <div className="w-full sm:w-fit border-4 border-amber-500 rounded-xl p-2 ">
+            <div className="flex flex-col sm:flex-row flex-wrap sm:justify-center justify-between items-center sm:items-start">
               <div className="mb-2 sm:mr-8">
-                <div className="flex flex-col">
+                <div className="flex flex-col ">
                   <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
                     Tali Tambang
                   </h1>
@@ -35,8 +34,8 @@ export default function Logo(): React.JSX.Element {
                 </p>
               </div>
             </div>
-            <div className="flex flex-row flex-wrap justify-center">
-              <div className="mb-2 sm:mr-8">
+            <div className="flex flex-col sm:flex-row flex-wrap sm:justify-center justify-between items-center sm:items-start">
+              <div className="mb-2 mr-0 sm:mr-8">
                 <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
                   Senjata Ambalan
                 </h1>
@@ -53,8 +52,8 @@ export default function Logo(): React.JSX.Element {
                 </p>
               </div>
             </div>
-            <div className="flex flex-row flex-wrap justify-center">
-              <div className="mb-2 sm:mr-8">
+            <div className="flex flex-col sm:flex-row flex-wrap sm:justify-center justify-between items-center sm:items-start">
+              <div className="mb-2 mr-0 sm:mr-8">
                 <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
                   Nomor Gugus Depan
                 </h1>

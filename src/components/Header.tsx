@@ -7,7 +7,7 @@ export default function Header() {
     <>
       <div className="sm:py-8 py-6 bg-white bg-opacity-10 backdrop-blur-md drop-shadow-xl sticky top-0">
         <nav className="flex justify-center">
-          <ul className="flex sm:gap-12 gap-4">
+          <ul className="flex sm:space-x-4 space-x-4 lg:gap-12">
             <li className="font-semibold text-[6pt] sm:text-base text-slate-800  cursor-pointer">
               <Link
                 to="home"

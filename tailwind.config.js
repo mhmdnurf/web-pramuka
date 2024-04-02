@@ -7,6 +7,9 @@ export default {
         nunito: ["Nunito", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
       },
+      screens: {
+        xs: "652px",
+      },
     },
   },
   plugins: [],

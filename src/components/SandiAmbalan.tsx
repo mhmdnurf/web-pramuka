@@ -10,14 +10,14 @@ export default function SandiAmbalan(): React.JSX.Element {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="sm:p-20 p-6"
+        className="lg:px-20 p-6 sm:p-4"
       >
-        <div className="sm:mx-20 sm:mb-20 mb-10" id="sandi-ambalan">
-          <p className="font-extrabold sm:text-6xl text-2xl uppercase my-6 sm:mt-20 sm:mb-15 font-nunito text-white sm:pt-20">
+        <div className="sm:mx-4 sm:mb-20 mb-10" id="sandi-ambalan">
+          <p className="font-extrabold sm:text-6xl text-2xl uppercase my-6 sm:mb-10 font-nunito text-white sm:pt-10">
             Sandi Ambalan
           </p>
           <div className="flex justify-center shadow">
-            <div className="w-full p-8 sm:bg-amber-100 bg-white rounded-xl sm:backdrop-blur-sm backdrop-filter sm:bg-opacity-25 bg-opacity-25 border border-slate-200">
+            <div className="w-full p-8  bg-white rounded-xl sm:backdrop-blur-sm backdrop-filter sm:bg-opacity-25 bg-opacity-25 border border-slate-200">
               <p className="text-justify font-medium text-xs sm:text-sm my-4 text-white">
                 Panas terik sang mentari
               </p>

@@ -22,7 +22,7 @@ interface SliderPrestasi {
 
 export default function SliderPrestasi({ data }: SliderPrestasi) {
   return (
-    <div className="sm:mx-20 mx-4 sm:mt-8 mt-6 sm:pb-16 pb-8">
+    <div className="sm:mx-5 mx-4 sm:mt-8 mt-6 sm:pb-16 pb-8">
       <Swiper
         spaceBetween={30}
         slidesPerView={1}
@@ -34,6 +34,12 @@ export default function SliderPrestasi({ data }: SliderPrestasi) {
         className="mySwiper"
         breakpoints={{
           640: {
+            slidesPerView: 2,
+          },
+          790: {
+            slidesPerView: 2,
+          },
+          1100: {
             slidesPerView: 3,
           },
         }}
