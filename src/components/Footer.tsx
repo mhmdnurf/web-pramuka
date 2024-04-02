@@ -1,7 +1,6 @@
 import React from "react";
-import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
-import { FaInstagram } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 
 export default function Footer(): React.JSX.Element {
   return (
@@ -11,34 +10,16 @@ export default function Footer(): React.JSX.Element {
           <h1 className="sm:text-2xl font-semibold text-white text-center md:text-left mb-4 md:mb-0">
             Pramuka SMA Negeri 1 Toapaya
           </h1>
-          <nav className="flex justify-center md:justify-start">
-            <ul className="flex flex-col md:flex-row gap-4 md:gap-12">
-              <li className="font-light text-white cursor-pointer hover:underline">
-                <ScrollLink to="logo" smooth duration={500}>
-                  Logo
-                </ScrollLink>
-              </li>
-              <li className="font-light text-white cursor-pointer hover:underline">
-                <ScrollLink to="sandi-ambalan" smooth duration={500}>
-                  Sandi Ambalan
-                </ScrollLink>
-              </li>
-              <li className="font-light text-white cursor-pointer hover:underline">
-                <ScrollLink to="daftar-prestasi" smooth duration={500}>
-                  Daftar Prestasi
-                </ScrollLink>
-              </li>
-              <li className="font-light text-white cursor-pointer hover:underline">
-                <ScrollLink to="struktur-organisasi" smooth duration={500}>
-                  Struktur Organisasi
-                </ScrollLink>
-              </li>
-            </ul>
-          </nav>
           <div className="flex flex-col items-center gap-4 mt-4 md:mt-0">
             <div className="flex gap-4">
-              <a href={"https://www.instagram.com/"} target="__blank">
+              <a
+                href={"https://www.instagram.com/ambalansmansatop_"}
+                target="__blank"
+              >
                 <FaInstagram size={32} color="white" />
+              </a>
+              <a href={"https://wa.me/628126193370"} target="__blank">
+                <FaWhatsapp size={32} color="white" />
               </a>
             </div>
             <Link

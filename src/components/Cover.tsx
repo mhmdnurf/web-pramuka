@@ -26,10 +26,10 @@ export default function Cover() {
             Gunung Kijang
           </h3>
         </div>
-        <div className="bg-gray-100 w-full sm:w-[400px] h-[200px] sm:h-[400px] rounded-full hidden sm:flex items-center justify-center mt-4 sm:mt-0">
+        <div className="w-full sm:w-[400px] h-[200px] sm:h-[400px] rounded-full hidden sm:flex items-center justify-center mt-4 sm:mt-0">
           <img
-            src="./logo.png"
-            className="h-[200px] sm:h-[400px] w-[200px] sm:w-[400px] object-cover rounded-full"
+            src="./logo-sekolah.png"
+            className="h-[200px] sm:h-[400px] w-[200px] sm:w-[400px] object-contain"
             alt=""
           />
         </div>
