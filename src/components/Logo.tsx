@@ -1,5 +1,4 @@
 import React from "react";
-
 export default function Logo(): React.JSX.Element {
   return (
     <>
@@ -8,29 +7,78 @@ export default function Logo(): React.JSX.Element {
           LOGO
         </p>
         <div className="flex flex-col sm:mt-24 mt-6 mx-4 sm:mx-20 pb-20 sm:flex-row">
-          <div className="shadow rounded-3xl border-4 border-white mb-4 sm:mb-0">
+          <div className="rounded-3xl mb-4 sm:mb-0">
             <img
-              src="./logo.jpg"
+              src="./logo-pramuka.png"
               alt=""
               className="w-full h-90 sm:w-[400px] sm:h-[400px] object-cover sm:object-cover rounded-3xl"
             />
           </div>
-          <div className="w-full sm:w-1/2 sm:ml-20">
-            <p className="text-white font-semibold sm:text-base text-xs text-justify font-nunito">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
-              blanditiis sapiente libero illo voluptatibus incidunt eveniet
-              quaerat rem aperiam dignissimos alias necessitatibus, magnam,
-              debitis reprehenderit? Voluptate iure aliquid tenetur nemo
-              necessitatibus excepturi veniam pariatur laborum aspernatur
-              officia? Non nesciunt nisi culpa voluptatem numquam,
-              necessitatibus qui sint aspernatur fugiat delectus ea, vero animi
-              quidem adipisci. Accusantium in atque nam odio dignissimos quod
-              repellendus eligendi assumenda voluptatum, dolor quidem earum
-              doloremque architecto corrupti pariatur et blanditiis placeat,
-              sunt quae ea nostrum aperiam tenetur? Optio ad architecto iure
-              tempore quis a odit? Molestias, obcaecati voluptas. Totam facilis
-              omnis numquam explicabo quasi et provident.
-            </p>
+          <div className="w-full sm:w-fit sm:ml-20 border-4 border-amber-500 rounded-xl p-4 ">
+            <div className="flex flex-row">
+              <div className="mb-2 mr-8">
+                <div className="flex flex-col">
+                  <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
+                    Tali Tambang
+                  </h1>
+                  <p className="text-black sm:text-base p-2 w-60 font-nunito bg-yellow-500 rounded-md">
+                    Menandakan tali persaudaraan tidak pernah putus
+                  </p>
+                </div>
+              </div>
+              <div className="mb-2">
+                <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
+                  Bintang
+                </h1>
+                <p className="text-black sm:text-base p-2 w-60 font-nunito bg-yellow-500 rounded-md">
+                  Ketuhanan yang Maha Esa
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-row">
+              <div className="mb-2 mr-8">
+                <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
+                  Senjata Ambalan
+                </h1>
+                <p className="text-black sm:text-base p-2 w-60 font-nunito bg-yellow-500 rounded-md">
+                  Bambu Kuning (SMAN 1 Toapaya dikelilingi bambu kuning)
+                </p>
+              </div>
+              <div className="mb-2">
+                <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
+                  Angka Satu
+                </h1>
+                <p className="text-black sm:text-base p-2 w-60 font-nunito bg-yellow-500 rounded-md">
+                  Merupakan Sekolah Menengah Atas yang ada di Toapaya
+                </p>
+              </div>
+            </div>
+            <div className="flex flex-row">
+              <div className="mb-2 mr-8">
+                <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
+                  Nomor Gugus Depan
+                </h1>
+                <p className="text-black sm:text-base p-2 w-60 font-nunito bg-yellow-500 rounded-md">
+                  10.017 - 10.018
+                </p>
+              </div>
+              <div className="mb-2">
+                <h1 className="text-black font-bold sm:text-xl text-xs text-justify font-nunito bg-white p-2 rounded-lg w-60 my-2">
+                  Toapaya
+                </h1>
+                <p className="text-black sm:text-base p-2 w-60 font-nunito bg-yellow-500 rounded-md">
+                  Salah Satu Kwartir Ranting yang ada di Kabupaten Bintan
+                </p>
+              </div>
+            </div>
+            <div className="mb-2">
+              <h1 className="text-black font-bold sm:text-xl text-xs font-nunito bg-white p-2 rounded-lg w-full my-2 text-center">
+                Persegi Lima
+              </h1>
+              <p className="text-black sm:text-base p-2 w-full font-nunito bg-yellow-500 rounded-md text-center">
+                Menandakan Lima Pancasila dan Shalat Lima Waktu{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>
