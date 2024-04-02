@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaWhatsapp, FaFacebook } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa6";
 
 export default function Footer(): React.JSX.Element {
   return (
@@ -37,13 +37,9 @@ export default function Footer(): React.JSX.Element {
           </nav>
           <div className="flex flex-col items-center gap-4 mt-4 md:mt-0">
             <div className="flex gap-4">
-              <a href={"https://www.instagram.com/mhmd.zaka"} target="__blank">
+              <a href={"https://www.instagram.com/"} target="__blank">
                 <FaInstagram size={32} color="white" />
               </a>
-              <a href="https://www.facebook.com" target="__blank">
-                <FaFacebook size={32} color="white" />
-              </a>
-              <FaWhatsapp size={32} color="white" />
             </div>
             <Link
               to="/dashboard"

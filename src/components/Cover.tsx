@@ -17,15 +17,13 @@ export default function Cover() {
             <span className="text-white">SMA Negeri 1 Toapaya</span>
           </h1>
           <h3 className="font-nunito font-medium my-6 text-xs sm:text-lg text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-            cupiditate repellendus sapiente molestiae debitis repellat inventore
-            impedit repudiandae neque optio.
-          </h3>
-          <h3 className="font-nunito font-semibold text-xs sm:text-lg text-white">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto sint
-            voluptas qui necessitatibus molestiae, distinctio deserunt iste
-            temporibus illo enim dolorum voluptatum aut, cumque facere! Dolor
-            quasi aut ipsa nobis odio facere numquam quod pariatur nesciunt qui
+            SMA ini didirikan di era reformasi atas tuntutan masyarakat akan
+            lembaga pendidikan di daerah ini, serta pertimbangan upaya tetap
+            mempertahankan keberadaan institusi pendidikan yang telah ada yaitu
+            SMUN 1 Bintan Timur (kelas jauh) terkait dengan dikeluarkannya surat
+            dari Dinas Pendidikan Provinsi Riau Melalui Dinas Pendidikan
+            Kabupaten Kepulauan Riau untuk membangun Sekolah Baru di Kecamatan
+            Gunung Kijang
           </h3>
         </div>
         <div className="bg-gray-100 w-full sm:w-[400px] h-[200px] sm:h-[400px] rounded-full hidden sm:flex items-center justify-center mt-4 sm:mt-0">
