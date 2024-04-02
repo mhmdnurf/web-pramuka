@@ -2,7 +2,7 @@ export default function Cover() {
   return (
     <>
       <div
-        className="sm:w-screen bg-white h-[400px] sm:h-[500px] md:h-[700px] flex flex-col sm:flex-row pl-10 pt-20 pr-10"
+        className="sm:w-full bg-white h-[400px] sm:h-[500px] md:h-[700px] flex flex-col sm:flex-row pl-10 pt-20 pr-10"
         style={{
           backgroundImage:
             "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./cover.jpeg)",
@@ -13,8 +13,7 @@ export default function Cover() {
       >
         <div className="w-full sm:w-2/3 mr-12">
           <h1 className="font-semibold text-2xl sm:text-4xl text-white">
-            Pramuka {""}
-            <span className="text-white">SMA Negeri 1 Toapaya</span>
+            SMA Negeri 1 Toapaya
           </h1>
           <h3 className="font-nunito font-medium my-6 text-xs sm:text-lg text-white">
             SMA ini didirikan di era reformasi atas tuntutan masyarakat akan
