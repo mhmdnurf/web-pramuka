@@ -1,15 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp, FaLocationDot } from "react-icons/fa6";
 
 export default function Footer(): React.JSX.Element {
   return (
     <>
       <div className="w-full h-auto md:h-48 bg-sky-950">
         <div className="flex flex-col md:flex-row justify-between items-center h-full mx-4 md:mx-20 py-4 md:py-0">
-          <h1 className="sm:text-2xl font-semibold text-white text-center md:text-left mb-4 md:mb-0">
+          <h1 className="sm:text-2xl font-semibold text-white text-center md:text-left mb-4 md:mb-0 mt-4">
             Pramuka SMA Negeri 1 Toapaya
           </h1>
+          <div className="flex flex-col items-center sm:gap-4 mt-4 md:mt-0 text-white sm:text-base text-xs justify-center">
+            <div className="flex items-center justify-center">
+              <FaLocationDot
+                size={32}
+                color="white"
+                className="sm:mx-2 hidden"
+              />
+              <span className="text-center">
+                (21) Kepulauan Riau, (21.01) Kab. Bintan, (21.01.12) Toapaya,
+                JL. GESEK KM 25 KAWAL
+              </span>
+            </div>
+          </div>
           <div className="flex flex-col items-center gap-4 mt-4 md:mt-0">
             <div className="flex gap-4">
               <a

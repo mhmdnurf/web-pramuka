@@ -7,6 +7,8 @@ import SandiAmbalan from "./components/SandiAmbalan";
 import DaftarPrestasi from "./components/DaftarPrestasi";
 import StrukturOrganisasi from "./components/StrukturOrganisasi";
 import Footer from "./components/Footer";
+import Video from "./components/Video";
+import Gallery from "./components/Gallery";
 
 export default function Portofolio(): React.JSX.Element {
   return (
@@ -15,10 +17,12 @@ export default function Portofolio(): React.JSX.Element {
         <Header />
         <Cover />
         <Statistic />
+        <Video />
         <Logo />
         <SandiAmbalan />
         <DaftarPrestasi />
         <StrukturOrganisasi />
+        <Gallery />
         <Footer />
       </div>
     </>

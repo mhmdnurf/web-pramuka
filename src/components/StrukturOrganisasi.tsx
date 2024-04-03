@@ -38,7 +38,7 @@ export default function StrukturOrganisasi() {
           backgroundPosition: "center",
         }}
       >
-        <p className="sm:text-6xl text-2xl font-extrabold uppercase text-white text-left sm:my-20 my-10 font-nunito">
+        <p className="sm:text-6xl text-2xl font-bold text-white text-left sm:my-20 my-10">
           Struktur Organisasi
         </p>
         {isLoading ? (

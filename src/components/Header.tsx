@@ -26,6 +26,22 @@ export default function Header() {
             </li>
             <li className="font-semibold text-[6pt] sm:text-base text-slate-800 cursor-pointer">
               <Link
+                to="video"
+                smooth
+                duration={500}
+                spy
+                onSetActive={() => setActiveLink("video")}
+                className={
+                  activeLink === "video"
+                    ? "sm:border-b-4 border-b-2 border-slate-500"
+                    : ""
+                }
+              >
+                Video
+              </Link>
+            </li>
+            <li className="font-semibold text-[6pt] sm:text-base text-slate-800 cursor-pointer">
+              <Link
                 to="logo"
                 smooth
                 duration={500}
@@ -69,7 +85,7 @@ export default function Header() {
                     : ""
                 }
               >
-                Daftar Prestasi
+                Prestasi
               </Link>
             </li>
             <li className="font-semibold text-[6pt] sm:text-base text-slate-800 cursor-pointer">
@@ -85,7 +101,23 @@ export default function Header() {
                     : ""
                 }
               >
-                Struktur Organisasi
+                Struktur
+              </Link>
+            </li>
+            <li className="font-semibold text-[6pt] sm:text-base text-slate-800 cursor-pointer">
+              <Link
+                to="galeri"
+                smooth
+                duration={500}
+                spy
+                onSetActive={() => setActiveLink("galeri")}
+                className={
+                  activeLink === "galeri"
+                    ? "sm:border-b-4 border-b-2 border-slate-500"
+                    : ""
+                }
+              >
+                Galeri
               </Link>
             </li>
           </ul>

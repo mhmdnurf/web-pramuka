@@ -13,7 +13,7 @@ export default function Cover() {
       >
         <div className="w-full sm:w-2/3 mr-12">
           <div className="flex">
-            <h1 className="font-semibold max-sm:text-lg text-2xl sm:text-4xl text-white">
+            <h1 className="font-semibold max-sm:text-lg text-2xl sm:text-6xl text-white">
               SMA Negeri 1 Toapaya
             </h1>
             <div className="flex sm:hidden">

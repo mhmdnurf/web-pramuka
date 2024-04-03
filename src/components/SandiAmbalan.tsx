@@ -13,7 +13,7 @@ export default function SandiAmbalan(): React.JSX.Element {
         className="lg:px-20 p-6 sm:p-4"
       >
         <div className="sm:mx-4 sm:mb-20 mb-10" id="sandi-ambalan">
-          <p className="font-extrabold sm:text-6xl text-2xl uppercase my-6 sm:mb-10 font-nunito text-white sm:pt-10">
+          <p className="font-bold sm:text-6xl text-2xl my-6 sm:mb-10 text-white sm:pt-10">
             Sandi Ambalan
           </p>
           <div className="flex justify-center shadow">
