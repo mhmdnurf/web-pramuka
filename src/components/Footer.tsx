@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaInstagram, FaWhatsapp, FaLocationDot } from "react-icons/fa6";
+import { FaInstagram, FaWhatsapp, FaLocationArrow } from "react-icons/fa6";
 
 export default function Footer(): React.JSX.Element {
   return (
@@ -12,12 +12,12 @@ export default function Footer(): React.JSX.Element {
           </h1>
           <div className="flex flex-col items-center sm:gap-4 mt-4 md:mt-0 text-white sm:text-base text-xs justify-center">
             <div className="flex items-center justify-center">
-              <FaLocationDot
+              <FaLocationArrow
                 size={32}
                 color="white"
-                className="sm:mx-2 hidden"
+                className="sm:mr-2 hidden sm:flex"
               />
-              <span className="text-center">
+              <span className="text-center sm:text-xs sm:mr-2">
                 (21) Kepulauan Riau, (21.01) Kab. Bintan, (21.01.12) Toapaya,
                 JL. GESEK KM 25 KAWAL
               </span>

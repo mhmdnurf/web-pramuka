@@ -7,7 +7,7 @@ export default function DaftarPrestasi(): React.JSX.Element {
   return (
     <>
       <div className="bg-amber-300 bg-opacity-30 sm:pt-10" id="daftar-prestasi">
-        <p className="sm:text-6xl text-2xl font-bold text-zinc-800 text-center sm:pt-12 pt-6 sm:pb-6">
+        <p className="sm:text-6xl text-4xl font-bold text-zinc-800 text-center sm:pt-12 pt-6 sm:pb-6">
           Daftar Prestasi
         </p>
         {isLoadingPrestasi ? (

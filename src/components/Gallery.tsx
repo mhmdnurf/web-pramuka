@@ -25,7 +25,7 @@ export default function Gallery() {
         id="galeri"
       >
         <div className="backdrop-filter bg-opacity-25 backdrop-blur-lg">
-          <h1 className="text-6xl text-center font-bold pt-16 text-white">
+          <h1 className="sm:text-6xl text-4xl text-center font-bold pt-16 sm:pb-8 pb-6 text-white">
             Gallery
           </h1>
           <div className="sm:mx-5 mx-4 sm:mt-8 mt-6 sm:pb-16 pb-8">

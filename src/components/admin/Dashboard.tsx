@@ -70,7 +70,7 @@ export default function Dashboard(): React.JSX.Element {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col h-screen">
+        <div className="flex flex-col max-h-screen max-w-screen">
           <Header />
           <DaftarAnggota />
           <TabelPrestasi

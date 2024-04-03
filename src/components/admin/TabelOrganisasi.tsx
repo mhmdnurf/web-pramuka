@@ -45,22 +45,22 @@ export default function TabelOrganisasi({
   return (
     <>
       <div id="struktur-organisasi">
-        <div className="bg-white grow px-20 py-10">
+        <div className="bg-white grow px-4 sm:px-20 py-10">
           <h1 className="text-4xl font-semibold text-slate-700 mb-6">
             Struktur Organisasi
           </h1>
-          <div className="flex justify-end mb-4">
+          <div className="flex flex-col sm:flex-row justify-end mb-4">
             <Link
-              to={"/addStruktur"}
-              className="bg-slate-600 text-white px-4 py-2 rounded-lg mx-4 outline-none focus:ring-4 transition-all ring-slate-300"
+              to={"/addPrestasi"}
+              className="bg-slate-600 text-white sm:text-center px-4 py-2 rounded-lg sm:mr-2 md:mx-4 outline-none focus:ring-4 transition-all ring-slate-300 mb-2 sm:mb-0 font-semibold"
             >
-              Tambah Struktur Organisasi
+              Tambah Struktur
             </Link>
             <input
               type="search"
-              className="border-2 rounded-md focus:outline-none focus:ring-2 transition-all ring-slate-300 p-2 w-[450px]"
+              className="border-2 rounded-md focus:outline-none focus:ring-2 transition-all ring-slate-300 p-2 w-full md:w-[450px]"
+              placeholder="Cari Judul Prestasi..."
               onChange={handleSearchChange}
-              placeholder="Cari Nama atau Jabatan..."
             />
           </div>
           <div className="divide-y divide-gray-200 border-4 rounded-xl overflow-x-auto shadow-md mb-20 max-h-[500px]">

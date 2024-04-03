@@ -3,7 +3,7 @@ export default function Logo(): React.JSX.Element {
   return (
     <>
       <div className="bg-amber-900 bg-opacity-70" id="logo">
-        <p className="text-center text-2xl sm:text-4xl md:text-6xl text-white font-bold sm:pt-20 pt-10">
+        <p className="text-center text-4xl sm:text-6xl text-white font-bold sm:pt-20 pt-10">
           Makna Logo
         </p>
         <div className="flex flex-col sm:mt-24 mt-6 mx-4 sm:mx-10 pb-20 sm:flex-row flex-wrap sm:justify-evenly justify-center items-center sm:items-start">

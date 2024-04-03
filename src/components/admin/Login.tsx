@@ -15,6 +15,7 @@ export default function Login(): React.JSX.Element {
   const [password, setPassword] = React.useState("");
   const [showPassword, setShowPassword] = React.useState(false);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const navigate = useNavigate();
 
   const checkLogin = React.useCallback(() => {
@@ -31,6 +32,18 @@ export default function Login(): React.JSX.Element {
   React.useEffect(() => {
     checkLogin();
   }, [checkLogin]);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const closeModal = () => {
     setIsOpen(false);
@@ -146,10 +159,21 @@ export default function Login(): React.JSX.Element {
               </div>
             </Dialog>
           </Transition>
-          <div className="max-w-screen max-h-screen flex justify-center items-center bg-white rounded-3xl ">
+          <div
+            className="w-screen h-screen flex flex-wrap sm:flex-nowrap justify-center items-center bg-white"
+            style={
+              windowWidth < 640
+                ? {
+                    backgroundImage:
+                      "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./login.jpeg)",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                  }
+                : {}
+            }
+          >
             <div
-              className="flex w-full justify-center items-center h-screen bg-gradient-to-r from-slate-300 to-slate-500
-           pt-10"
+              className="sm:flex w-full justify-center items-center sm:h-full pt-10 hidden"
               style={{
                 backgroundImage:
                   "linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(./login.jpeg)",
@@ -157,7 +181,7 @@ export default function Login(): React.JSX.Element {
                 backgroundPosition: "center",
               }}
             >
-              <div className="w-[350px]">
+              <div className="w-full">
                 <h1 className="text-center mt-10 text-2xl font-semibold text-white">
                   Login Admin - Pramuka SMA Negeri 1 Toapaya
                 </h1>
@@ -166,10 +190,14 @@ export default function Login(): React.JSX.Element {
                 </h3>
               </div>
             </div>
+
             <form
-              className="bg-white w-full h-full flex justify-center flex-col mx-32"
+              className="bg-white w-full sm:h-full flex justify-center flex-col mx-4 sm:mx-8 md:mx-16 lg:mx-32 p-8 rounded-3xl"
               onSubmit={handleLogin}
             >
+              <h1 className="text-center text-lg sm:hidden font-medium text-slate-600 mb-6">
+                Pramuka SMA Negeri 1 Toapaya
+              </h1>
               <h1 className="text-center mb-6 text-2xl font-semibold text-slate-600">
                 Login Admin
               </h1>

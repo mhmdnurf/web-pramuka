@@ -30,27 +30,36 @@ export default function Header(): React.JSX.Element {
   };
   return (
     <>
-      <div className="py-8 bg-gradient-to-r bg-slate-300 sticky top-0 border-b-2 backdrop-blur-lg bg-opacity-50">
-        <nav className="flex justify-between mx-20">
-          <ul className="flex gap-12">
-            <li className="font-semibold text-slate-800  cursor-pointer hover:underline">
+      <div className="sm:py-8 py-4 bg-gradient-to-r bg-slate-300 sticky top-0 border-b-2 backdrop-blur-lg bg-opacity-50 w-full">
+        <nav className="flex justify-between md:mx-20 mx-4">
+          <ul className="flex space-x-4">
+            <li className="font-semibold text-slate-800 sm:text-base text-xs cursor-pointer hover:underline">
               <Link to="/">Home</Link>
             </li>
-            <li className="font-semibold text-slate-800  cursor-pointer hover:underline">
+            <li className="font-semibold text-slate-800 sm:text-base text-xs cursor-pointer hover:underline">
               <ScrollLink to="daftar-prestasi" smooth duration={500}>
-                Daftar Prestasi
+                Prestasi
               </ScrollLink>
             </li>
-            <li className="font-semibold text-slate-800  cursor-pointer hover:underline">
+            <li className="font-semibold text-slate-800 sm:text-base text-xs cursor-pointer hover:underline">
               <ScrollLink to="struktur-organisasi" smooth duration={500}>
-                Struktur Organisasi
+                Struktur
+              </ScrollLink>
+            </li>
+            <li className="font-semibold text-slate-800 sm:text-base text-xs cursor-pointer hover:underline">
+              <ScrollLink to="struktur-organisasi" smooth duration={500}>
+                Video
+              </ScrollLink>
+            </li>
+            <li className="font-semibold text-slate-800 sm:text-base text-xs cursor-pointer hover:underline">
+              <ScrollLink to="struktur-organisasi" smooth duration={500}>
+                Galeri
               </ScrollLink>
             </li>
           </ul>
           <div className="flex justify-end items-end">
-            <h1 className="font-medium text-slate-800">Halo, Admin</h1>
             <button
-              className="ml-4 font-semibold hover:underline hover:text-red-400"
+              className="ml-4 font-semibold hover:underline sm:text-base text-xs hover:text-red-400"
               onClick={handleLogout}
             >
               Logout

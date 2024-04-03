@@ -76,11 +76,11 @@ export default function AddPrestasi(): React.JSX.Element {
   return (
     <>
       <div className="py-8 bg-slate-700 sticky top-0">
-        <h1 className="mx-20 text-2xl text-white font-semibold">
+        <h1 className="mx-4 sm:mx-20 text-2xl text-white font-semibold">
           Tambah Prestasi
         </h1>
       </div>
-      <div className="mt-10 mx-20">
+      <div className="mt-10 mx-4 sm:mx-20">
         <Link to={"/dashboard"}>
           <button className="bg-slate-600 text-white px-4 py-2 rounded-lg outline-none focus:ring-4 transition-all ring-slate-300">
             Kembali
@@ -92,7 +92,7 @@ export default function AddPrestasi(): React.JSX.Element {
         >
           <label
             htmlFor="file-upload"
-            className="bg-slate-600 px-4 py-4 w-64 text-center rounded-xl font-semibold text-white cursor-pointer mb-4"
+            className="bg-slate-600 px-4 py-4 w-full sm:w-64 text-center rounded-xl font-semibold text-white cursor-pointer mb-4"
           >
             Upload Image
           </label>
@@ -108,7 +108,7 @@ export default function AddPrestasi(): React.JSX.Element {
               <img
                 src={imageURL}
                 alt="Uploaded"
-                className="mt-4 max-w-[600px] max-h-[400px] object-cover border-8 border-zinc-700  rounded-md"
+                className="mt-4 max-w-full sm:max-w-[600px] max-h-[400px] object-cover border-8 border-zinc-700 rounded-md mb-4"
               />
             </div>
           )}

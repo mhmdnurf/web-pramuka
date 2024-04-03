@@ -7,9 +7,9 @@ export default function Video() {
   function PlayIcon() {
     return (
       <>
-        <div className="sm:p-8 p-4 bg-white rounded-full hover:scale-110 border-4 border-slate-500">
+        <div className="sm:p-8 p-4 bg-white rounded-full backdrop-blur-lg backdrop-filter bg-opacity-15 hover:scale-110 border-4 border-slate-500">
           <FaVideo
-            className="text-6xl text-amber-500"
+            className="text-6xl text-slate-100"
             size={isNotSmallScreen ? 100 : 32}
           />
         </div>
@@ -28,7 +28,7 @@ export default function Video() {
         id="video"
       >
         <div className="w-full flex justify-center sm:py-20 sm:px-20 p-8 flex-col  backdrop-blur-sm bg-opacity-25 backdrop-filter">
-          <p className="text-2xl sm:text-4xl md:text-6xl font-bold text-white sm:p-4 mb-4">
+          <p className="text-4xl sm:text-6xl font-bold text-white sm:p-4 mb-8">
             Videography
           </p>
           <div className="w-full flex justify-center overflow-hidden rounded-3xl">
@@ -38,10 +38,10 @@ export default function Video() {
                 width: isNotSmallScreen ? "800px" : "300px",
                 height: isNotSmallScreen ? "500px" : "200px",
               }}
-              className="rounded-3xl shadow-2xl border-4 border-slate-300 hover:scale-105 transition-transform duration-500 ease-in-out sm:mt-8"
+              className="rounded-3xl shadow-2xl border-4 border-slate-300 sm:hover:scale-105 sm:transition-transform sm:duration-500 sm:ease-in-out sm:mt-8"
             >
               <ReactPlayer
-                url="https://www.youtube.com/watch?v=-TXtyYZIiWc"
+                url="https://www.youtube.com/watch?v=l8yh5ZsjCTk"
                 loop={true}
                 width="100%"
                 height="100%"
