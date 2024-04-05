@@ -8,6 +8,8 @@ import EditPrestasi from "./components/admin/EditPrestasi";
 import AddStruktur from "./components/admin/AddStruktur";
 import EditStruktur from "./components/admin/EditStruktur";
 import AddAnggota from "./components/admin/AddAnggota";
+import AddGallery from "./components/admin/AddGallery";
+import EditGallery from "./components/admin/EditGallery";
 
 const App = () => {
   return (
@@ -60,6 +62,22 @@ const App = () => {
           element={
             <ProtectedRoute>
               <AddAnggota />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/addGallery"
+          element={
+            <ProtectedRoute>
+              <AddGallery />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/editGallery/:id"
+          element={
+            <ProtectedRoute>
+              <EditGallery />
             </ProtectedRoute>
           }
         />

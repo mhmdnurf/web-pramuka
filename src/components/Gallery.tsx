@@ -7,10 +7,10 @@ import "../styles.css";
 
 // import required modules
 import { Autoplay } from "swiper/modules";
-import usePrestasi from "../hooks/usePrestasi";
+import useGallery from "../hooks/useGallery";
 
 export default function Gallery() {
-  const { dataPrestasi } = usePrestasi();
+  const { dataGallery } = useGallery();
 
   return (
     <>
@@ -50,7 +50,7 @@ export default function Gallery() {
                 },
               }}
             >
-              {dataPrestasi.map((item) => (
+              {dataGallery.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div className="bg-amber-800 bg-opacity-60 rounded-lg ">
                     <img

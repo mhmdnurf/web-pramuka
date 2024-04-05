@@ -47,12 +47,12 @@ export default function Header(): React.JSX.Element {
               </ScrollLink>
             </li>
             <li className="font-semibold text-slate-800 sm:text-base text-xs cursor-pointer hover:underline">
-              <ScrollLink to="struktur-organisasi" smooth duration={500}>
+              <ScrollLink to="video" smooth duration={500}>
                 Video
               </ScrollLink>
             </li>
             <li className="font-semibold text-slate-800 sm:text-base text-xs cursor-pointer hover:underline">
-              <ScrollLink to="struktur-organisasi" smooth duration={500}>
+              <ScrollLink to="gallery" smooth duration={500}>
                 Galeri
               </ScrollLink>
             </li>

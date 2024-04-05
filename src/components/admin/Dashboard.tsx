@@ -8,6 +8,8 @@ import Swal from "sweetalert2";
 import TabelPrestasi from "./TabelPrestasi";
 import TabelOrganisasi from "./TabelOrganisasi";
 import DaftarAnggota from "./DaftarAnggota";
+import TabelGallery from "./TabelGallery";
+import useGallery from "../../hooks/useGallery";
 
 export default function Dashboard(): React.JSX.Element {
   const {
@@ -20,6 +22,12 @@ export default function Dashboard(): React.JSX.Element {
     isLoading: isLoadingOrganisasi,
     updateOrganisasi,
   } = useOrganisasi();
+
+  const {
+    dataGallery,
+    updateGallery,
+    isLoading: isLoadingGallery,
+  } = useGallery();
 
   const handleShowImage = (url: string) => {
     window.open(url, "_blank");
@@ -61,9 +69,27 @@ export default function Dashboard(): React.JSX.Element {
     }
   };
 
+  const handleDeleteGallery = async (id: string) => {
+    const result = await Swal.fire({
+      title: "Apakah Anda yakin?",
+      text: "Data yang dihapus tidak dapat dikembalikan!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#334155",
+      cancelButtonColor: "#94a3b8",
+      confirmButtonText: "Confirm",
+      cancelButtonText: "Batal",
+    });
+    if (result.isConfirmed) {
+      const db = getFirestore(app);
+      await deleteDoc(doc(db, "gallery", id));
+      updateGallery(id);
+    }
+  };
+
   return (
     <>
-      {isLoadingPrestasi || isLoadingOrganisasi ? (
+      {isLoadingPrestasi || isLoadingOrganisasi || isLoadingGallery ? (
         <div className="fixed inset-0 bg-black/25 flex justify-center items-center">
           <div className="bg-white p-4 rounded-lg">
             <p className="text-lg font-semibold text-slate-800">Loading...</p>
@@ -81,6 +107,11 @@ export default function Dashboard(): React.JSX.Element {
           <TabelOrganisasi
             dataOrganisasi={dataOrganisasi}
             handleDeleteOrganisasi={handleDeleteOrganisasi}
+            handleShowImage={handleShowImage}
+          />
+          <TabelGallery
+            dataGallery={dataGallery}
+            handleDeleteGallery={handleDeleteGallery}
             handleShowImage={handleShowImage}
           />
         </div>
