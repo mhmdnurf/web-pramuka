@@ -1,8 +1,12 @@
+import React from "react";
+import { app } from "../utils/firebase";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { FaVideo } from "react-icons/fa6";
 import ReactPlayer from "react-player";
 import { useMediaQuery } from "react-responsive";
 export default function Video() {
   const isNotSmallScreen = useMediaQuery({ minWidth: 640 });
+  const [videoURL, setVideoURL] = React.useState<string>("");
 
   function PlayIcon() {
     return (
@@ -16,6 +20,29 @@ export default function Video() {
       </>
     );
   }
+
+  const fetchVideo = React.useCallback(async () => {
+    try {
+      const uid = "6GCi8f6OLaC7vHbWX0tt";
+      const db = getFirestore(app);
+      const query = doc(db, "video", uid);
+      const snapshot = await getDoc(query);
+      if (snapshot.exists()) {
+        const data = snapshot.data();
+        if (data) {
+          setVideoURL(data.videoURL);
+        }
+        console.log(data);
+      }
+    } catch (error) {
+      console.error("Error fetching data: ", error);
+    }
+  }, []);
+
+  React.useEffect(() => {
+    fetchVideo();
+  }, [fetchVideo]);
+
   return (
     <>
       <div
@@ -41,7 +68,7 @@ export default function Video() {
               className="rounded-3xl shadow-2xl border-4 border-slate-300 sm:hover:scale-105 sm:transition-transform sm:duration-500 sm:ease-in-out sm:mt-8"
             >
               <ReactPlayer
-                url="https://www.youtube.com/watch?v=l8yh5ZsjCTk"
+                url={videoURL}
                 loop={true}
                 width="100%"
                 height="100%"

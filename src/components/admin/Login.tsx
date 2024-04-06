@@ -198,6 +198,22 @@ export default function Login(): React.JSX.Element {
               <h1 className="text-center text-lg sm:hidden font-medium text-slate-600 mb-6">
                 Pramuka SMA Negeri 1 Toapaya
               </h1>
+              <div className="flex justify-center mb-4">
+                <div className="w-fit rounded-full p-4">
+                  <img
+                    src="/logo-sekolah.png"
+                    alt=""
+                    className="w-28 h-28 object-cover"
+                  />
+                </div>
+                <div className="w-fit rounded-full p-4">
+                  <img
+                    src="/logo-pramuka.png"
+                    alt=""
+                    className="w-28 h-28 object-cover"
+                  />
+                </div>
+              </div>
               <h1 className="text-center mb-6 text-2xl font-semibold text-slate-600">
                 Login Admin
               </h1>

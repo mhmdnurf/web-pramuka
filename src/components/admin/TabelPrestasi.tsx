@@ -55,7 +55,7 @@ export default function TabelPrestasi({
             <input
               type="search"
               className="border-2 rounded-md focus:outline-none focus:ring-2 transition-all ring-slate-300 p-2 w-full md:w-[450px]"
-              placeholder="Cari Judul Prestasi..."
+              placeholder="Cari..."
               onChange={handleSearchChange}
             />
           </div>

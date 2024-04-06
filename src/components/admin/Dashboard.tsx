@@ -10,6 +10,8 @@ import TabelOrganisasi from "./TabelOrganisasi";
 import DaftarAnggota from "./DaftarAnggota";
 import TabelGallery from "./TabelGallery";
 import useGallery from "../../hooks/useGallery";
+import useVideo from "../../hooks/useVideo";
+import TabelVideo from "./TabelVideo";
 
 export default function Dashboard(): React.JSX.Element {
   const {
@@ -28,6 +30,8 @@ export default function Dashboard(): React.JSX.Element {
     updateGallery,
     isLoading: isLoadingGallery,
   } = useGallery();
+
+  const { dataVideo, isLoading: isLoadingVideo } = useVideo();
 
   const handleShowImage = (url: string) => {
     window.open(url, "_blank");
@@ -89,7 +93,10 @@ export default function Dashboard(): React.JSX.Element {
 
   return (
     <>
-      {isLoadingPrestasi || isLoadingOrganisasi || isLoadingGallery ? (
+      {isLoadingPrestasi ||
+      isLoadingOrganisasi ||
+      isLoadingGallery ||
+      isLoadingVideo ? (
         <div className="fixed inset-0 bg-black/25 flex justify-center items-center">
           <div className="bg-white p-4 rounded-lg">
             <p className="text-lg font-semibold text-slate-800">Loading...</p>
@@ -114,6 +121,7 @@ export default function Dashboard(): React.JSX.Element {
             handleDeleteGallery={handleDeleteGallery}
             handleShowImage={handleShowImage}
           />
+          <TabelVideo dataVideo={dataVideo} handleShowVideo={handleShowImage} />
         </div>
       )}
     </>

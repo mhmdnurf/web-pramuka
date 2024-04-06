@@ -10,6 +10,7 @@ import EditStruktur from "./components/admin/EditStruktur";
 import AddAnggota from "./components/admin/AddAnggota";
 import AddGallery from "./components/admin/AddGallery";
 import EditGallery from "./components/admin/EditGallery";
+import EditVideo from "./components/admin/EditVideo";
 
 const App = () => {
   return (
@@ -78,6 +79,14 @@ const App = () => {
           element={
             <ProtectedRoute>
               <EditGallery />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/editVideo/:id"
+          element={
+            <ProtectedRoute>
+              <EditVideo />
             </ProtectedRoute>
           }
         />
