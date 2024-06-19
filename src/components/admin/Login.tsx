@@ -203,14 +203,14 @@ export default function Login(): React.JSX.Element {
                   <img
                     src="/logo-sekolah.png"
                     alt=""
-                    className="w-28 h-28 object-cover"
+                    className="w-20 h-20 sm:w-28 sm:h-28 object-cover"
                   />
                 </div>
                 <div className="w-fit rounded-full p-4">
                   <img
                     src="/logo-pramuka.png"
                     alt=""
-                    className="w-28 h-28 object-cover"
+                    className="w-20 h-20 sm:w-28 sm:h-28 object-cover"
                   />
                 </div>
               </div>
