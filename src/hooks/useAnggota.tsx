@@ -11,7 +11,7 @@ export default function useAnggota() {
     setIsLoading(true);
 
     try {
-      const uid = "MwAeE3TZbRRNDCgw4MaR9cJyELk1";
+      const uid = "2j5Bdbx4pWNzd9wI2gW7lA5ovtp2";
       const db = getFirestore(app);
       const query = doc(db, "users", uid);
       const snapshot = await getDoc(query);

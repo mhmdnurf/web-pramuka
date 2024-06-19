@@ -13,7 +13,9 @@ export default function DaftarAnggota(): React.JSX.Element {
             Total Daftar Anggota
           </h1>
           <div className="p-4 bg-slate-500 rounded-md w-full my-2">
-            <p className="text-white text-center font-semibold text-xl">25</p>
+            <p className="text-white text-center font-semibold text-xl">
+              {parseInt(jumlahLakiLaki) + parseInt(jumlahPerempuan)}
+            </p>
           </div>
           <h1 className="font-bold text-slate-800 text-xl">
             Total Anggota Laki-Laki
